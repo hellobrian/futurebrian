@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "keycaps",
+  "info": {
+    "name": "keycaps",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "round": {
+      "type": "integer",
+      "default": 1
+    },
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "dates.dates"
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.links"
+    }
+  }
+}
