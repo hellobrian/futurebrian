@@ -1,3 +1,9 @@
 .List {
-  padding: 8px 16px;
+  list-style-type: none;
+  margin: var(--size2) var(--size3);
+  font-size: var(--size8);
+}
+
+.List a {
+  font-family: var(--bebas);
 }
