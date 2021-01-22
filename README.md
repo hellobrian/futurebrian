@@ -1,5 +1,17 @@
 # futurebrian
 
+## Development
+
+```bash
+# Run the backend server in development
+cd futurebrian/backend
+yarn develop
+
+# Run frontend code in development
+cd ../frontend
+yarn dev
+```
+
 ## How to build & deploy
 
 ```bash
