@@ -1,20 +1,33 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+:root {
+  --bebas: "Bebas Neue", cursive;
+  --plex: "IBM Plex Sans", sans-serif;
+  --raleway: "Raleway", sans-serif;
+  --size1: 4px;
+  --size2: 8px;
+  --size3: 16px;
+  --size4: 20px;
+  --size5: 24px;
+  --size6: 28px;
+  --size7: 32px;
+  --size8: 64px;
 }
 
 body {
   overflow-y: scroll;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: var(--plex);
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--raleway);
+  line-height: 1.5;
+}
+
+p,
+a {
+  font-family: var(--plex);
+  line-height: 1;
 }
 
 a {
@@ -26,4 +39,26 @@ a {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.ff--plex {
+  font-family: var(--plex);
+}
+
+.ff--raleway {
+  font-family: var(--raleway);
+}
+
+.ff--bebas {
+  font-family: var(--bebas);
+}
+
+.mx--size3 {
+  margin-left: var(--size3);
+  margin-right: var(--size3);
+}
+
+.px--size3 {
+  padding-left: var(--size3);
+  padding-right: var(--size3);
 }
