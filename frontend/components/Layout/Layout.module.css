@@ -3,3 +3,14 @@
   grid-template-rows: 60px 1fr;
   height: 200vh;
 }
+
+.NavbarWrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: top 200ms;
+}
+
+.NavBarHidden {
+  top: -64px;
+}
