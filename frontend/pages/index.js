@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { request, gql } from "graphql-request";
 import { Layout } from "@/components/Layout/Layout";
 
@@ -7,7 +8,6 @@ const query = gql`
     keyboards(sort: "name") {
       id
       name
-      layout
     }
     keycaps(sort: "name") {
       id
@@ -33,3 +33,20 @@ export default function Home({ data }) {
     </Layout>
   );
 }
+
+Home.propTypes = {
+  data: PropTypes.shape({
+    keyboards: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string,
+      })
+    ),
+    keycaps: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string,
+      })
+    ),
+  }),
+};
