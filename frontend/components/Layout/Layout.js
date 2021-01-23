@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import Head from "next/head";
 import { Navbar } from "@/components/Navbar/Navbar";
 import styles from "./Layout.module.css";
@@ -13,19 +14,19 @@ export function Layout({ children, ...props }) {
 
   const [isVisible, setVisible] = useState(true);
 
-  const handleScroll = () => {
-    const currentScrollPosition = window.pageYOffset;
-    const visibiilty = prevScrollPosition > currentScrollPosition;
-
-    setPrevScrollPosition(currentScrollPosition);
-    setVisible(visibiilty);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPosition = window.pageYOffset;
+      const visibiilty = prevScrollPosition > currentScrollPosition;
+
+      setPrevScrollPosition(currentScrollPosition);
+      setVisible(visibiilty);
+    };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  });
+  }, [prevScrollPosition]);
 
   const navbarClass = classnames(styles.NavbarWrapper, {
     [styles.NavBarHidden]: !isVisible,
@@ -50,3 +51,7 @@ export function Layout({ children, ...props }) {
     </>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
