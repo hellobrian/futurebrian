@@ -1,5 +1,6 @@
 import { request, gql } from "graphql-request";
 import { Layout } from "@/components/Layout/Layout";
+import styles from "@/styles/Keyboard.module.css";
 
 const endpoint = process.env.GRAPHQL_ENDPOINT;
 
@@ -26,6 +27,7 @@ export async function getStaticProps({ params }) {
       keyboard(id: $id) {
         id
         name
+        layout
       }
     }
   `;
@@ -40,10 +42,124 @@ export async function getStaticProps({ params }) {
   };
 }
 
+function ListItem({ children }) {
+  return <li className={styles.ListItem}>{children}</li>;
+}
+
 export default function Keyboard({ data }) {
   return (
     <Layout>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <div className={styles.Container}>
+        <img
+          className={styles.MainImage}
+          src="/keyboards/photos/ava-yellow.jpg"
+          alt="ava"
+        />
+        <h2 className="fs--9 fw--normal ta--center">{data.keyboard.name}</h2>
+        {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
+        <ul
+          className={`${styles.List} ta--center mb--7`}
+          style={{ width: "100%" }}
+        >
+          <ListItem>{data.keyboard.layout}</ListItem>
+          <ListItem>hotswap / soldered</ListItem>
+          <ListItem>{data.keyboard.layout} sldkfjsldfj</ListItem>
+          <ListItem>hotswap / soldered</ListItem>
+          <ListItem>{data.keyboard.layout}</ListItem>
+          <ListItem>hotswap / soldered</ListItem>
+          <ListItem>{data.keyboard.layout}</ListItem>
+          <ListItem>hotswap / soldered</ListItem>
+        </ul>
+        <details className={styles.YouTube}>
+          <summary>Sound Test Video</summary>
+          <iframe
+            width="400"
+            height="315"
+            src="https://www.youtube.com/embed/g-vBr9a36NE"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </details>
+
+        <p className={`${styles.Post}`}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          perspiciatis corporis nemo natus veniam. Harum doloremque corrupti
+          velit! Debitis sint odit corrupti vel cum esse animi saepe facilis,
+          dignissimos quam! Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Nostrum perspiciatis corporis nemo natus veniam. Harum
+          doloremque corrupti velit! Debitis sint odit corrupti vel cum esse
+          animi saepe facilis, dignissimos quam! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Nostrum perspiciatis corporis nemo natus
+          veniam. Harum doloremque corrupti velit! Debitis sint odit corrupti
+          vel cum esse animi saepe facilis, dignissimos quam! Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Nostrum perspiciatis corporis
+          nemo natus veniam. Harum doloremque corrupti velit! Debitis sint odit
+          corrupti vel cum esse animi saepe facilis, dignissimos quam!
+        </p>
+        <div className={styles.Gallery}>
+          <img
+            className={styles.Image}
+            src="/keyboards/photos/ava-yellow.jpg"
+            alt="ava"
+          />
+          <img
+            className={styles.Image}
+            src="/keyboards/photos/ava-yellow.jpg"
+            alt="ava"
+          />
+          <img
+            className={styles.Image}
+            src="/keyboards/photos/ava-yellow.jpg"
+            alt="ava"
+          />
+          <img
+            className={styles.Image}
+            src="/keyboards/photos/ava-yellow.jpg"
+            alt="ava"
+          />
+          <img
+            className={styles.Image}
+            src="/keyboards/photos/ava-yellow.jpg"
+            alt="ava"
+          />
+          <img
+            className={styles.Image}
+            src="/keyboards/photos/ava-yellow.jpg"
+            alt="ava"
+          />
+          <img
+            className={styles.Image}
+            src="/keyboards/photos/ava-yellow.jpg"
+            alt="ava"
+          />
+          <img
+            className={styles.Image}
+            src="/keyboards/photos/ava-yellow.jpg"
+            alt="ava"
+          />
+          <img
+            className={styles.Image}
+            src="/keyboards/photos/ava-yellow.jpg"
+            alt="ava"
+          />
+          <img
+            className={styles.Image}
+            src="/keyboards/photos/ava-yellow.jpg"
+            alt="ava"
+          />
+          <img
+            className={styles.Image}
+            src="/keyboards/photos/ava-yellow.jpg"
+            alt="ava"
+          />
+          <img
+            className={styles.Image}
+            src="/keyboards/photos/ava-yellow.jpg"
+            alt="ava"
+          />
+        </div>
+      </div>
     </Layout>
   );
 }

@@ -17,7 +17,9 @@ export function Layout({ children, ...props }) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPosition = window.pageYOffset;
-      const visibiilty = prevScrollPosition > currentScrollPosition;
+      const visibiilty =
+        currentScrollPosition < 200 ||
+        prevScrollPosition > currentScrollPosition;
 
       setPrevScrollPosition(currentScrollPosition);
       setVisible(visibiilty);
