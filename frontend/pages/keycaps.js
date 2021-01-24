@@ -22,7 +22,7 @@ export async function getStaticProps() {
 export default function Keycaps({ data }) {
   return (
     <Layout>
-      <div className="mx--size3">
+      <div className="mx--3">
         <h1>Keycaps</h1>
         <pre>
           <code>{JSON.stringify(data, null, 2)}</code>

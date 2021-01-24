@@ -1,16 +1,19 @@
 .Layout {
   display: grid;
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 68px 1fr;
   height: 200vh;
 }
 
 .NavbarWrapper {
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
   transition: top 200ms;
+  z-index: var(--layer--navbar);
+  border-bottom: 1px solid black;
+  background: white;
 }
 
 .NavBarHidden {
-  top: -64px;
+  top: -68px;
 }
