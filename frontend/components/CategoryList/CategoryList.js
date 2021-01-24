@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
-import Image from "next/image";
 import styles from "./CategoryList.module.css";
 
 const VARIANTS = ["keyboards", "keycaps"];
