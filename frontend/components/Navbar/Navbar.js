@@ -18,11 +18,13 @@ export function Navbar() {
 
       <nav>
         {router.pathname === "/menu" ? (
-          <Link href="/">
-            <a className={styles.Toggle}>
-              <IconClose className={styles.IconClose}></IconClose>
-            </a>
-          </Link>
+          <button
+            type="button"
+            className={styles.Toggle}
+            onClick={() => router.back()}
+          >
+            <IconClose className={styles.IconClose}></IconClose>
+          </button>
         ) : (
           <Link href="/menu">
             <a className={styles.Toggle}>

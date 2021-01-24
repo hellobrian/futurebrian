@@ -17,6 +17,12 @@
   align-items: center;
 }
 
+button.Toggle {
+  appearance: none;
+  border: none;
+  background: none;
+}
+
 .Toggle > svg {
   width: var(--size5);
   height: var(--size5);
