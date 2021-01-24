@@ -72,14 +72,16 @@ export default function Keyboard({ data }) {
         </ul>
         <details className={styles.YouTube}>
           <summary>Sound Test Video</summary>
-          <iframe
-            width="400"
-            height="315"
-            src="https://www.youtube.com/embed/g-vBr9a36NE"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <div className={styles.EmbedWrapper}>
+            <iframe
+              width="100%"
+              height="auto"
+              src="https://www.youtube.com/embed/g-vBr9a36NE"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </details>
 
         <p className={`${styles.Post}`}>
