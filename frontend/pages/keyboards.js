@@ -1,5 +1,6 @@
 import { request, gql } from "graphql-request";
 import { Layout } from "@/components/Layout/Layout";
+import { CategoryList } from "@/components/CategoryList/CategoryList";
 
 const endpoint = process.env.GRAPHQL_ENDPOINT;
 const query = gql`
@@ -22,12 +23,7 @@ export async function getStaticProps() {
 export default function Keyboards({ data }) {
   return (
     <Layout>
-      <div className="mx--3">
-        <h1>Keyboards</h1>
-        <pre>
-          <code>{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      </div>
+      <CategoryList data={data} variant="keyboards" />
     </Layout>
   );
 }

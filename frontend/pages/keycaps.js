@@ -1,5 +1,6 @@
 import { request, gql } from "graphql-request";
 import { Layout } from "@/components/Layout/Layout";
+import { CategoryList } from "@/components/CategoryList/CategoryList";
 
 const endpoint = process.env.GRAPHQL_ENDPOINT;
 const query = gql`
@@ -7,6 +8,10 @@ const query = gql`
     keycaps(sort: "name") {
       id
       name
+      links {
+        vendor
+        interest_check
+      }
     }
   }
 `;
@@ -22,12 +27,7 @@ export async function getStaticProps() {
 export default function Keycaps({ data }) {
   return (
     <Layout>
-      <div className="mx--3">
-        <h1>Keycaps</h1>
-        <pre>
-          <code>{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      </div>
+      <CategoryList data={data} variant="keycaps" />
     </Layout>
   );
 }

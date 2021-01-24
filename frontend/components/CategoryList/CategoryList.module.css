@@ -1,0 +1,45 @@
+.Section {
+  border: 1px solid black;
+  margin: var(--size3);
+}
+
+.HeadingWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: white;
+  height: var(--size9);
+  border-bottom: 1px solid black;
+}
+
+.List {
+  display: grid;
+  grid-gap: var(--size2);
+  text-align: center;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  padding: var(--size2);
+}
+
+.ListItem {
+  border: 1px solid black;
+  padding-top: var(--size4);
+  padding-bottom: var(--size4);
+  width: 100%;
+  font-weight: 400;
+  font-size: var(--size8);
+  font-family: var(--bebas);
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.Links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: var(--size2);
+}
+
+.Links > a {
+  font-size: var(--size3);
+}

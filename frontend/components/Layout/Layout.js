@@ -43,10 +43,7 @@ export function Layout({ children, ...props }) {
         <div className={navbarClass}>
           <Navbar />
         </div>
-        <div style={{ gridRowStart: 2 }}>
-          {/* <button onClick={() => setVisible(!isVisible)}>toggle</button> */}
-          {children}
-        </div>
+        <div style={{ gridRowStart: 2 }}>{children}</div>
       </main>
     </>
   );
