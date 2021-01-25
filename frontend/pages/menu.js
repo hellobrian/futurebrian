@@ -1,23 +1,46 @@
-// import Link from "next/link";
-import { Layout } from "@/components/Layout/Layout";
-import styles from "../styles/Menu.module.css";
+import { MenuComponent } from "@/components/MenuComponent/MenuComponent";
+import PropTypes from "prop-types";
+import { request, gql } from "graphql-request";
 
-export default function Menu() {
-  return (
-    <Layout className={styles.Menu}>
-      <ul className={styles.List}>
-        <li>
-          <a href="https://www.instagram.com/futurebrian_/">instagram</a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/channel/UCQGq3OYhoZJrlRaemSCe6Zg">
-            youtube
-          </a>
-        </li>
-        <li>
-          <a href="https://www.reddit.com/user/futurebrian">reddit</a>
-        </li>
-      </ul>
-    </Layout>
-  );
+const endpoint = process.env.GRAPHQL_ENDPOINT;
+const query = gql`
+  query {
+    keyboards(sort: "name") {
+      id
+      name
+    }
+    keycaps(sort: "name") {
+      id
+      name
+    }
+  }
+`;
+
+export async function getStaticProps() {
+  const data = await request(endpoint, query);
+  return {
+    props: { data },
+    revalidate: 1,
+  };
 }
+
+export default function Menu({ data }) {
+  return <MenuComponent data={data}></MenuComponent>;
+}
+
+Menu.propTypes = {
+  data: PropTypes.shape({
+    keyboards: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string,
+      })
+    ),
+    keycaps: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string,
+      })
+    ),
+  }),
+};

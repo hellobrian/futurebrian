@@ -33,13 +33,3 @@
   text-transform: uppercase;
   overflow: hidden;
 }
-
-.Links {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: var(--size2);
-}
-
-.Links > a {
-  font-size: var(--size3);
-}
