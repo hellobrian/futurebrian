@@ -45,6 +45,12 @@ a {
   text-decoration: none;
 }
 
+button {
+  appearance: none;
+  border: none;
+  background: none;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

@@ -6,26 +6,6 @@ export default function Menu() {
   return (
     <Layout className={styles.Menu}>
       <ul className={styles.List}>
-        {/* <li>
-          <Link href="/keycaps">
-            <a>Keycaps</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/keyboards">
-            <a>Keyboards</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/blog">
-            <a>Blog</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </li> */}
         <li>
           <a href="https://www.instagram.com/futurebrian_/">instagram</a>
         </li>

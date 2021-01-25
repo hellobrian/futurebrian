@@ -1,29 +1,27 @@
 .Navbar {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 8px 16px;
   background: white;
 }
 
-.Navbar > p {
-  font-size: var(--size7);
+.Navbar > nav {
+  display: flex;
+  align-items: baseline;
+}
+
+.Navbar h1 {
+  font-size: var(--size6);
   line-height: 1.5;
 }
 
 .Toggle {
   display: inline-flex;
+  justify-content: center;
   align-items: center;
-}
-
-button.Toggle {
-  appearance: none;
-  border: none;
-  background: none;
+  margin-right: var(--size1);
 }
 
 .Toggle > svg {
-  width: var(--size5);
-  height: var(--size5);
+  height: var(--size4);
+  width: var(--size4);
 }

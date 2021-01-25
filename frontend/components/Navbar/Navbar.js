@@ -8,29 +8,39 @@ export function Navbar() {
 
   return (
     <header className={styles.Navbar}>
-      <h1>
-        <Link href="/">
-          <a className="ff--bebas" title="click here to go home">
-            futurebrian
-          </a>
-        </Link>
-      </h1>
-
       <nav>
         {router.pathname === "/menu" ? (
-          <button
-            type="button"
-            className={styles.Toggle}
-            onClick={() => router.back()}
-          >
-            <IconClose className={styles.IconClose}></IconClose>
-          </button>
+          <>
+            <button
+              type="button"
+              className={styles.Toggle}
+              onClick={() => router.back()}
+            >
+              <IconClose className={styles.IconClose}></IconClose>
+            </button>
+            <h1>
+              <Link href="/">
+                <a className="ff--bebas" title="click here to go home">
+                  futurebrian
+                </a>
+              </Link>
+            </h1>
+          </>
         ) : (
-          <Link href="/menu">
-            <a className={styles.Toggle}>
-              <IconMenu className={styles.IconMenu}></IconMenu>
-            </a>
-          </Link>
+          <>
+            <Link href="/menu">
+              <a className={styles.Toggle}>
+                <IconMenu className={styles.IconMenu}></IconMenu>
+              </a>
+            </Link>
+            <h1>
+              <Link href="/">
+                <a className="ff--bebas" title="click here to go home">
+                  futurebrian
+                </a>
+              </Link>
+            </h1>
+          </>
         )}
       </nav>
     </header>
