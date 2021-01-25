@@ -2,6 +2,7 @@
   --bebas: "Bebas Neue", cursive;
   --plex: "IBM Plex Sans", sans-serif;
   --raleway: "Raleway", sans-serif;
+
   --size1: 4px;
   --size2: 8px;
   --size3: 16px;
@@ -10,7 +11,11 @@
   --size6: 28px;
   --size7: 32px;
   --size8: 48px;
-  --size9: 64px;
+  --size9: 60px;
+  --size10: 64px;
+
+  --headingHeight: var(--size9);
+
   --layer--navbar: 2;
   --layer--heading: 1;
 }

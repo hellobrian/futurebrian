@@ -1,6 +1,11 @@
 .Layout {
   display: grid;
-  grid-template-rows: 58px 1fr;
+  grid-template-rows: var(--headingHeight) 1fr;
+}
+
+.Layout.Tablet {
+  display: grid;
+  grid-template-rows: 1fr;
 }
 
 .NavbarWrapper {
@@ -9,10 +14,31 @@
   transform: translateY(0px);
   transition: transform 200ms;
   z-index: var(--layer--navbar);
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
   background: white;
 }
 
 .NavBarHidden {
   transform: translateY(-68px);
 }
+
+.Content {
+  grid-row-start: 2;
+}
+
+.Content.Tablet {
+  grid-row-start: 1;
+  background-color: pink;
+}
+
+/* @media screen and (min-width: 768px) {
+  .Layout {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+
+  .Content {
+    grid-row-start: 1;
+    background-color: pink;
+  }
+} */

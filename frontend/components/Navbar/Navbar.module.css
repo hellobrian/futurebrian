@@ -4,9 +4,25 @@
   background: white;
 }
 
+.Navbar.Tablet {
+  width: fit-content;
+  position: fixed;
+  border: 2px solid black;
+  top: var(--size2);
+  left: var(--size2);
+}
+
 .Navbar > nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-items: left;
+  align-items: baseline;
+}
+
+.Navbar.Tablet > nav {
+  display: grid;
+  grid-template-columns: var(--size4) 1fr;
+  grid-gap: var(--size2);
   justify-items: left;
   align-items: baseline;
 }
@@ -15,6 +31,12 @@
   font-size: var(--size6);
   line-height: 1.5;
   justify-self: center;
+}
+
+.Heading.Tablet {
+  font-size: var(--size6);
+  line-height: 1.5;
+  justify-self: unset;
 }
 
 .Button {
@@ -28,3 +50,27 @@
   height: var(--size4);
   width: var(--size4);
 }
+/* 
+@media screen and (min-width: 768px) {
+  .Navbar {
+    width: fit-content;
+    position: fixed;
+    border: 2px solid black;
+    top: var(--size2);
+    left: var(--size2);
+  }
+
+  .Navbar > nav {
+    display: grid;
+    grid-template-columns: var(--size4) 1fr;
+    grid-gap: var(--size2);
+    justify-items: left;
+    align-items: baseline;
+  }
+
+  .Heading {
+    font-size: var(--size6);
+    line-height: 1.5;
+    justify-self: unset;
+  }
+} */

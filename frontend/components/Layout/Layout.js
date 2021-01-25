@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
+import classnames from "classnames";
+import useMedia from "use-media";
+
 import { Navbar } from "@/components/Navbar/Navbar";
 import styles from "./Layout.module.css";
-import classnames from "classnames";
 
 export function Layout({ children, ...props }) {
+  const isTablet = useMedia({ minWidth: "768px" });
   const [prevScrollPosition, setPrevScrollPosition] = useState(null);
 
   useEffect(() => {
@@ -41,11 +44,22 @@ export function Layout({ children, ...props }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main {...props} className={styles.Layout}>
+      <main
+        {...props}
+        className={classnames(styles.Layout, {
+          [styles.Tablet]: isTablet,
+        })}
+      >
         <div className={navbarClass}>
           <Navbar />
         </div>
-        <div style={{ gridRowStart: 2 }}>{children}</div>
+        <div
+          className={classnames(styles.Content, {
+            [styles.Tablet]: isTablet,
+          })}
+        >
+          {children}
+        </div>
       </main>
     </>
   );
