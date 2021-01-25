@@ -5,23 +5,26 @@
 }
 
 .Navbar > nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: left;
   align-items: baseline;
 }
 
-.Navbar h1 {
+.Heading {
   font-size: var(--size6);
   line-height: 1.5;
+  justify-self: center;
 }
 
-.Toggle {
+.Button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   margin-right: var(--size1);
 }
 
-.Toggle > svg {
+.Button > svg {
   height: var(--size4);
   width: var(--size4);
 }
