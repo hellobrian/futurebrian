@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 import styles from "./CategoryList.module.css";
 
-const VARIANTS = ["keyboards", "keycaps"];
+const VARIANTS = ["keyboards", "keycaps", "socials"];
 
 function HeadingWrapper({ heading, info }) {
   return (
@@ -26,20 +26,11 @@ List.propTypes = {
   children: PropTypes.node,
 };
 
-function ListItem({ children, variant }) {
+function ListItem({ children }) {
   return (
-    <>
-      {variant === "keyboards" && (
-        <li className={`${styles.ListItem} fs--5`}>
-          <span className="name">{children}</span>
-        </li>
-      )}
-      {variant === "keycaps" && (
-        <li className={`${styles.ListItem} fs--5`}>
-          <span className="name">{children}</span>
-        </li>
-      )}
-    </>
+    <li className={`${styles.ListItem} fs--5`}>
+      <span className="name">{children}</span>
+    </li>
   );
 }
 
@@ -64,6 +55,11 @@ export function CategoryList({ data, variant }) {
           info={`${data.keycaps.length} sets`}
         />
       )}
+
+      {variant === "socials" && (
+        <HeadingWrapper heading={"Socials"} info="Follow Me" />
+      )}
+
       <List>
         {variant === "keyboards" &&
           data.keyboards.map((keyboard) => {
@@ -93,6 +89,35 @@ export function CategoryList({ data, variant }) {
               </ListItem>
             );
           })}
+        {variant === "socials" && (
+          <>
+            <ListItem>
+              <a
+                className="ff--bebas"
+                href="https://www.instagram.com/futurebrian_/"
+              >
+                instagram
+              </a>
+            </ListItem>
+            <ListItem>
+              <a
+                className="ff--bebas"
+                href="https://www.youtube.com/channel/UCQGq3OYhoZJrlRaemSCe6Zg"
+              >
+                youtube
+              </a>
+            </ListItem>
+            <ListItem>
+              {" "}
+              <a
+                className="ff--bebas"
+                href="https://www.reddit.com/user/futurebrian"
+              >
+                reddit
+              </a>
+            </ListItem>
+          </>
+        )}
       </List>
     </section>
   );
