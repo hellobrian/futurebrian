@@ -10,7 +10,7 @@
   position: sticky;
   top: 0;
   background: white;
-  height: var(--headingHeight);
+  height: var(--navbarHeight);
   border-bottom: 1px solid black;
 }
 

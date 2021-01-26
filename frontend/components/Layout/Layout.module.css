@@ -1,6 +1,6 @@
 .Layout {
   display: grid;
-  grid-template-rows: var(--headingHeight) 1fr;
+  grid-template-rows: var(--navbarHeight) 1fr;
 }
 
 .Layout.Tablet {

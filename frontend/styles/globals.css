@@ -14,7 +14,7 @@
   --size9: 60px;
   --size10: 64px;
 
-  --headingHeight: var(--size9);
+  --navbarHeight: var(--size9);
 
   --layer--navbar: 2;
   --layer--heading: 1;
