@@ -1,7 +1,10 @@
 .Navbar {
+  position: fixed;
   width: 100%;
   padding: 8px 16px;
   background: white;
+  z-index: var(--layer--navbar);
+  border-bottom: 1px solid black;
 }
 
 .Navbar > nav {
@@ -9,6 +12,17 @@
   grid-template-columns: repeat(3, 1fr);
   justify-items: left;
   align-items: baseline;
+}
+
+.Navbar[data-variant="desktop"] {
+  padding: 8px 0;
+  width: 400px;
+  border-right: 1px solid black;
+}
+
+.Navbar[data-variant="desktop"] > nav {
+  grid-template-columns: 400px 1fr 1fr;
+  justify-content: center;
 }
 
 .Heading {

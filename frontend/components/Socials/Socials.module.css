@@ -1,8 +1,0 @@
-.List {
-  margin: var(--size2) var(--size3);
-  font-size: var(--size8);
-}
-
-.List a {
-  font-family: var(--bebas);
-}

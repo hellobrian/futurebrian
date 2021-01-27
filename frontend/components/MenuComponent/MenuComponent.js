@@ -1,20 +1,20 @@
 import PropTypes from "prop-types";
-import { Layout } from "@/components/Layout/Layout";
 import { CategoryList } from "@/components/CategoryList/CategoryList";
-import { Socials } from "@/components/Socials/Socials";
+
 // import styles from "./MenuComponent.module.css";
 
-export function MenuComponent({ data }) {
+export function MenuComponent({ data, setMenuOpen }) {
   return (
-    <Layout>
-      <CategoryList data={data} variant="keyboards" />
-      <CategoryList data={data} variant="keycaps" />
-      <Socials />
-    </Layout>
+    <>
+      <CategoryList setMenuOpen={setMenuOpen} variant="keyboards" data={data} />
+      <CategoryList setMenuOpen={setMenuOpen} variant="keycaps" data={data} />
+      <CategoryList setMenuOpen={setMenuOpen} variant="socials" />
+    </>
   );
 }
 
 MenuComponent.propTypes = {
+  setMenuOpen: PropTypes.func.isRequired,
   data: PropTypes.shape({
     keyboards: PropTypes.arrayOf(
       PropTypes.shape({

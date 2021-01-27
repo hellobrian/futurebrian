@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 import styles from "./CategoryList.module.css";
 
-const VARIANTS = ["keyboards", "keycaps"];
+const VARIANTS = ["keyboards", "keycaps", "socials"];
 
 function HeadingWrapper({ heading, info }) {
   return (
@@ -26,20 +26,11 @@ List.propTypes = {
   children: PropTypes.node,
 };
 
-function ListItem({ children, variant }) {
+function ListItem({ children }) {
   return (
-    <>
-      {variant === "keyboards" && (
-        <li className={`${styles.ListItem} fs--5`}>
-          <span className="name">{children}</span>
-        </li>
-      )}
-      {variant === "keycaps" && (
-        <li className={`${styles.ListItem} fs--5`}>
-          <span className="name">{children}</span>
-        </li>
-      )}
-    </>
+    <li className={`${styles.ListItem} fs--5`}>
+      <span className="name">{children}</span>
+    </li>
   );
 }
 
@@ -48,7 +39,7 @@ ListItem.propTypes = {
   variant: PropTypes.oneOf(VARIANTS),
 };
 
-export function CategoryList({ data, variant }) {
+export function CategoryList({ data, variant, setMenuOpen }) {
   return (
     <section className={`${styles.Section} mb--7`}>
       {variant === "keyboards" && (
@@ -64,13 +55,20 @@ export function CategoryList({ data, variant }) {
           info={`${data.keycaps.length} sets`}
         />
       )}
+
+      {variant === "socials" && (
+        <HeadingWrapper heading={"Socials"} info="Follow Me" />
+      )}
+
       <List>
         {variant === "keyboards" &&
           data.keyboards.map((keyboard) => {
             return (
               <ListItem key={keyboard.id} variant={variant}>
                 <Link href={`/keyboards/${keyboard.id}`}>
-                  <a className="ff--bebas">{keyboard.name}</a>
+                  <a className="ff--bebas" onClick={() => setMenuOpen(false)}>
+                    {keyboard.name}
+                  </a>
                 </Link>
               </ListItem>
             );
@@ -80,7 +78,9 @@ export function CategoryList({ data, variant }) {
             return (
               <ListItem key={id} variant={variant}>
                 <Link href={`/keycaps/${id}`}>
-                  <a className="ff--bebas">{name}</a>
+                  <a className="ff--bebas" onClick={() => setMenuOpen(false)}>
+                    {name}
+                  </a>
                 </Link>
                 {links && (
                   <div className={styles.Links}>
@@ -93,6 +93,38 @@ export function CategoryList({ data, variant }) {
               </ListItem>
             );
           })}
+        {variant === "socials" && (
+          <>
+            <ListItem>
+              <a
+                onClick={() => setMenuOpen(false)}
+                className="ff--bebas"
+                href="https://www.instagram.com/futurebrian_/"
+              >
+                instagram
+              </a>
+            </ListItem>
+            <ListItem>
+              <a
+                onClick={() => setMenuOpen(false)}
+                className="ff--bebas"
+                href="https://www.youtube.com/channel/UCQGq3OYhoZJrlRaemSCe6Zg"
+              >
+                youtube
+              </a>
+            </ListItem>
+            <ListItem>
+              {" "}
+              <a
+                onClick={() => setMenuOpen(false)}
+                className="ff--bebas"
+                href="https://www.reddit.com/user/futurebrian"
+              >
+                reddit
+              </a>
+            </ListItem>
+          </>
+        )}
       </List>
     </section>
   );
