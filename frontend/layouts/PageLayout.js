@@ -66,7 +66,10 @@ export function PageLayout({ data, children }) {
                 isMenuOpen={isMenuOpen}
                 variant={breakpoint}
               />
-              <MenuComponent data={data}></MenuComponent>
+              <MenuComponent
+                data={data}
+                setMenuOpen={setMenuOpen}
+              ></MenuComponent>
             </div>
             <div className={styles.Content}>{children}</div>
           </>

@@ -39,7 +39,7 @@ ListItem.propTypes = {
   variant: PropTypes.oneOf(VARIANTS),
 };
 
-export function CategoryList({ data, variant }) {
+export function CategoryList({ data, variant, setMenuOpen }) {
   return (
     <section className={`${styles.Section} mb--7`}>
       {variant === "keyboards" && (
@@ -66,7 +66,9 @@ export function CategoryList({ data, variant }) {
             return (
               <ListItem key={keyboard.id} variant={variant}>
                 <Link href={`/keyboards/${keyboard.id}`}>
-                  <a className="ff--bebas">{keyboard.name}</a>
+                  <a className="ff--bebas" onClick={() => setMenuOpen(false)}>
+                    {keyboard.name}
+                  </a>
                 </Link>
               </ListItem>
             );
@@ -76,7 +78,9 @@ export function CategoryList({ data, variant }) {
             return (
               <ListItem key={id} variant={variant}>
                 <Link href={`/keycaps/${id}`}>
-                  <a className="ff--bebas">{name}</a>
+                  <a className="ff--bebas" onClick={() => setMenuOpen(false)}>
+                    {name}
+                  </a>
                 </Link>
                 {links && (
                   <div className={styles.Links}>
@@ -93,6 +97,7 @@ export function CategoryList({ data, variant }) {
           <>
             <ListItem>
               <a
+                onClick={() => setMenuOpen(false)}
                 className="ff--bebas"
                 href="https://www.instagram.com/futurebrian_/"
               >
@@ -101,6 +106,7 @@ export function CategoryList({ data, variant }) {
             </ListItem>
             <ListItem>
               <a
+                onClick={() => setMenuOpen(false)}
                 className="ff--bebas"
                 href="https://www.youtube.com/channel/UCQGq3OYhoZJrlRaemSCe6Zg"
               >
@@ -110,6 +116,7 @@ export function CategoryList({ data, variant }) {
             <ListItem>
               {" "}
               <a
+                onClick={() => setMenuOpen(false)}
                 className="ff--bebas"
                 href="https://www.reddit.com/user/futurebrian"
               >

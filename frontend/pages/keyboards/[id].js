@@ -51,7 +51,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-function ListItem({ children }) {
+function Tag({ children }) {
   return <li className={styles.ListItem}>{children}</li>;
 }
 
@@ -69,14 +69,14 @@ export default function Keyboard({ data }) {
           className={`${styles.List} ta--center mb--7`}
           style={{ width: "100%" }}
         >
-          <ListItem>{data.keyboard.layout}</ListItem>
-          <ListItem>hotswap / soldered</ListItem>
-          <ListItem>{data.keyboard.layout} sldkfjsldfj</ListItem>
-          <ListItem>hotswap / soldered</ListItem>
-          <ListItem>{data.keyboard.layout}</ListItem>
-          <ListItem>hotswap / soldered</ListItem>
-          <ListItem>{data.keyboard.layout}</ListItem>
-          <ListItem>hotswap / soldered</ListItem>
+          <Tag>{data.keyboard.layout}</Tag>
+          <Tag>hotswap / soldered</Tag>
+          <Tag>{data.keyboard.layout} sldkfjsldfj</Tag>
+          <Tag>hotswap / soldered</Tag>
+          <Tag>{data.keyboard.layout}</Tag>
+          <Tag>hotswap / soldered</Tag>
+          <Tag>{data.keyboard.layout}</Tag>
+          <Tag>hotswap / soldered</Tag>
         </ul>
         <details className={styles.YouTube}>
           <summary>Sound Test Video</summary>
