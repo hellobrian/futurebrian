@@ -1,5 +1,6 @@
 import { request, gql } from "graphql-request";
-import { Layout } from "@/components/Layout/Layout";
+
+import { PageLayout } from "@/layouts/PageLayout";
 import styles from "@/styles/Keyboard.module.css";
 
 const endpoint = process.env.GRAPHQL_ENDPOINT;
@@ -29,6 +30,14 @@ export async function getStaticProps({ params }) {
         name
         layout
       }
+      keyboards(sort: "name") {
+        id
+        name
+      }
+      keycaps(sort: "name") {
+        id
+        name
+      }
     }
   `;
 
@@ -48,7 +57,7 @@ function ListItem({ children }) {
 
 export default function Keyboard({ data }) {
   return (
-    <Layout>
+    <PageLayout data={data}>
       <div className={styles.Container}>
         <img
           className={styles.MainImage}
@@ -56,7 +65,6 @@ export default function Keyboard({ data }) {
           alt="ava"
         />
         <h2 className="fs--9 fw--normal ta--center">{data.keyboard.name}</h2>
-        {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
         <ul
           className={`${styles.List} ta--center mb--7`}
           style={{ width: "100%" }}
@@ -162,6 +170,6 @@ export default function Keyboard({ data }) {
           />
         </div>
       </div>
-    </Layout>
+    </PageLayout>
   );
 }
