@@ -4,7 +4,6 @@
 }
 
 .Content {
-  background: pink;
   grid-row-start: 2;
 }
 
@@ -27,16 +26,5 @@
   .Content {
     grid-row: 1 / span 2;
     grid-column-start: 2;
-    background: salmon;
   }
 }
-
-/* .NavbarWrapper {
-    position: fixed;
-    width: 100%;
-    transform: translateY(0px);
-    transition: transform 200ms;
-    z-index: var(--layer--navbar);
-    border-bottom: 1px solid black;
-    background: white;
-  } */

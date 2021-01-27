@@ -60,7 +60,7 @@ export default function Keycap({ data }) {
       <div className={styles.Container}>
         <img
           className={styles.MainImage}
-          src="/keyboards/photos/ava-yellow.jpg"
+          src="/keycaps/renders/gmk-8008.png"
           alt="ava"
         />
         <h2 className="fs--9 fw--normal ta--center">{data.keycap.name}</h2>

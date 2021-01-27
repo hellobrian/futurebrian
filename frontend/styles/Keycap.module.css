@@ -4,7 +4,6 @@
 }
 
 .Content {
-  background: pink;
   grid-row-start: 2;
 }
 
@@ -27,7 +26,6 @@
   .Content {
     grid-row: 1 / span 2;
     grid-column-start: 2;
-    background: salmon;
   }
 }
 
