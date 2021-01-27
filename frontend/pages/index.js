@@ -71,13 +71,19 @@ export default function Home({ data }) {
           />
         )}
 
-        {breakpoint === "mobile" ||
-          (breakpoint === "tablet" && (
-            <div className={styles.Content}>
-              {isMenuOpen && <MenuComponent data={data}></MenuComponent>}
-              {!isMenuOpen && <h1>Home</h1>}
-            </div>
-          ))}
+        {breakpoint === "mobile" && (
+          <div className={styles.Content}>
+            {isMenuOpen && <MenuComponent data={data} />}
+            {!isMenuOpen && <h1>Home</h1>}
+          </div>
+        )}
+
+        {breakpoint === "tablet" && (
+          <div className={styles.Content}>
+            {isMenuOpen && <MenuComponent data={data} />}
+            {!isMenuOpen && <h1>Home</h1>}
+          </div>
+        )}
 
         {breakpoint === "desktop" && (
           <>
