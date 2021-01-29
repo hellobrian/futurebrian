@@ -3,6 +3,7 @@ import { request, gql } from "graphql-request";
 import { PageLayout } from "@/layouts/PageLayout";
 import styles from "@/styles/Keycap.module.css";
 
+const strapiUrl = process.env.NEXT_PUBLIC_BASE_STRAPI_URL;
 const endpoint = process.env.GRAPHQL_ENDPOINT;
 
 export async function getStaticPaths() {
@@ -28,6 +29,10 @@ export async function getStaticProps({ params }) {
       keycap(id: $id) {
         id
         name
+        hero_image {
+          url
+          alternativeText
+        }
       }
       keyboards(sort: "name") {
         id
@@ -58,11 +63,13 @@ export default function Keycap({ data }) {
   return (
     <PageLayout data={data}>
       <div className={styles.Container}>
-        <img
-          className={styles.MainImage}
-          src="/keycaps/renders/gmk-8008.png"
-          alt="ava"
-        />
+        {data.keycap.hero_image && (
+          <img
+            className={styles.MainImage}
+            src={`${strapiUrl}${data.keycap.hero_image.url}`}
+            alt={data.keycap.hero_image.alternativeText}
+          />
+        )}
         <h2 className="fs--9 fw--normal ta--center">{data.keycap.name}</h2>
         <ul
           className={`${styles.List} ta--center mb--7`}
