@@ -31,11 +31,8 @@
 
 .MainImage {
   object-fit: cover;
-  width: 100%;
   border-bottom: 1px solid black;
   width: 100%;
-  height: 50vh;
-  object-position: -50% left;
 }
 
 .YouTube {
