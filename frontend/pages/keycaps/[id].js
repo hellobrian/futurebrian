@@ -1,5 +1,5 @@
 import { request, gql } from "graphql-request";
-
+import Link from "next/link";
 import { PageLayout } from "@/layouts/PageLayout";
 import styles from "@/styles/Keycap.module.css";
 
@@ -29,6 +29,10 @@ export async function getStaticProps({ params }) {
       keycap(id: $id) {
         id
         name
+        links {
+          vendor
+          interest_check
+        }
         hero_image {
           url
           alternativeText
@@ -75,6 +79,22 @@ export default function Keycap({ data }) {
           className={`${styles.List} ta--center mb--7`}
           style={{ width: "100%" }}
         >
+          {data.keycap.links && (
+            <>
+              {data.keycap.links[0].vendor && (
+                <Tag>
+                  <a href={data.keycap.links[0].vendor}>Vendor</a>
+                </Tag>
+              )}
+              {data.keycap.links[0].interest_check && (
+                <Tag>
+                  <a href={data.keycap.links[0].interest_check}>
+                    Interest Check
+                  </a>
+                </Tag>
+              )}
+            </>
+          )}
           <Tag>Tag data 12302342</Tag>
 
           <Tag>Tag data 12302342</Tag>
