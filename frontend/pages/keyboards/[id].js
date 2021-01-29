@@ -33,6 +33,8 @@ export async function getStaticProps({ params }) {
         hero_image {
           url
           alternativeText
+          width
+          height
         }
       }
       keyboards(sort: "name") {
