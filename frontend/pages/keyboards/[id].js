@@ -3,6 +3,7 @@ import { request, gql } from "graphql-request";
 import { PageLayout } from "@/layouts/PageLayout";
 import styles from "@/styles/Keyboard.module.css";
 
+const strapiUrl = process.env.NEXT_PUBLIC_BASE_STRAPI_URL;
 const endpoint = process.env.GRAPHQL_ENDPOINT;
 
 export async function getStaticPaths() {
@@ -29,6 +30,10 @@ export async function getStaticProps({ params }) {
         id
         name
         layout
+        hero_image {
+          url
+          alternativeText
+        }
       }
       keyboards(sort: "name") {
         id
@@ -59,24 +64,19 @@ export default function Keyboard({ data }) {
   return (
     <PageLayout data={data}>
       <div className={styles.Container}>
-        <img
-          className={styles.MainImage}
-          src="/keyboards/photos/ava-yellow.jpg"
-          alt="ava"
-        />
+        {data.keyboard.hero_image && (
+          <img
+            className={styles.MainImage}
+            src={`${strapiUrl}${data.keyboard.hero_image.url}`}
+            alt={data.keyboard.hero_image.alternativeText}
+          />
+        )}
         <h2 className="fs--9 fw--normal ta--center">{data.keyboard.name}</h2>
         <ul
           className={`${styles.List} ta--center mb--7`}
           style={{ width: "100%" }}
         >
           <Tag>{data.keyboard.layout}</Tag>
-          <Tag>hotswap / soldered</Tag>
-          <Tag>{data.keyboard.layout} sldkfjsldfj</Tag>
-          <Tag>hotswap / soldered</Tag>
-          <Tag>{data.keyboard.layout}</Tag>
-          <Tag>hotswap / soldered</Tag>
-          <Tag>{data.keyboard.layout}</Tag>
-          <Tag>hotswap / soldered</Tag>
         </ul>
         <details className={styles.YouTube}>
           <summary>Sound Test Video</summary>

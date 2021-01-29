@@ -1,5 +1,4 @@
 import { request, gql } from "graphql-request";
-import Link from "next/link";
 import { PageLayout } from "@/layouts/PageLayout";
 import styles from "@/styles/Keycap.module.css";
 
@@ -95,13 +94,6 @@ export default function Keycap({ data }) {
               )}
             </>
           )}
-          <Tag>Tag data 12302342</Tag>
-
-          <Tag>Tag data 12302342</Tag>
-
-          <Tag>Tag data 12302342</Tag>
-
-          <Tag>Tag data 12302342</Tag>
         </ul>
 
         <details className={styles.YouTube}>
