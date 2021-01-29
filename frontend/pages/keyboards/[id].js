@@ -115,61 +115,6 @@ export default function Keyboard({ data }) {
             src="/keyboards/photos/ava-yellow.jpg"
             alt="ava"
           />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
         </div>
       </div>
     </PageLayout>

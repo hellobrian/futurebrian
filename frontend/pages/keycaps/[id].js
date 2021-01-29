@@ -131,61 +131,6 @@ export default function Keycap({ data }) {
             src="/keyboards/photos/ava-yellow.jpg"
             alt="ava"
           />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
-          <img
-            className={styles.Image}
-            src="/keyboards/photos/ava-yellow.jpg"
-            alt="ava"
-          />
         </div>
       </div>
     </PageLayout>
