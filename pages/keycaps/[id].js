@@ -1,23 +1,22 @@
 import { request, gql } from "graphql-request";
-
 import { PageLayout } from "@/layouts/PageLayout";
-import styles from "@/styles/Keyboard.module.css";
+import styles from "@/styles/Keycap.module.css";
 
-const strapiUrl = process.env.NEXT_PUBLIC_BASE_STRAPI_URL;
-const endpoint = process.env.GRAPHQL_ENDPOINT;
+const strapiUrl = process.env.NEXT_PUBLIC_PROD_URL;
+const endpoint = process.env.PROD_GRAPHQL_ENDPOINT;
 
 export async function getStaticPaths() {
   const query = gql`
     query {
-      keyboards {
+      keycaps {
         id
       }
     }
   `;
   const data = await request(endpoint, query);
 
-  const paths = data.keyboards.map((keyboard) => ({
-    params: { id: keyboard.id },
+  const paths = data.keycaps.map((keycap) => ({
+    params: { id: keycap.id },
   }));
 
   return { paths, fallback: false };
@@ -25,16 +24,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const query = gql`
-    query getKeyboard($id: ID!) {
-      keyboard(id: $id) {
+    query getKeycap($id: ID!) {
+      keycap(id: $id) {
         id
         name
-        layout
         hero_image {
           url
           alternativeText
-          width
-          height
         }
       }
       keyboards(sort: "name") {
@@ -62,24 +58,40 @@ function Tag({ children }) {
   return <li className={styles.ListItem}>{children}</li>;
 }
 
-export default function Keyboard({ data }) {
+export default function Keycap({ data }) {
   return (
     <PageLayout data={data}>
       <div className={styles.Container}>
-        {data.keyboard.hero_image && (
+        {data.keycap.hero_image && (
           <img
             className={styles.MainImage}
-            src={`${strapiUrl}${data.keyboard.hero_image.url}`}
-            alt={data.keyboard.hero_image.alternativeText}
+            src={`${strapiUrl}${data.keycap.hero_image.url}`}
+            alt={data.keycap.hero_image.alternativeText}
           />
         )}
-        <h2 className="fs--9 fw--normal ta--center">{data.keyboard.name}</h2>
+        <h2 className="fs--9 fw--normal ta--center">{data.keycap.name}</h2>
         <ul
           className={`${styles.List} ta--center mb--7`}
           style={{ width: "100%" }}
         >
-          <Tag>{data.keyboard.layout}</Tag>
+          {data.keycap.links && (
+            <>
+              {data.keycap.links[0].vendor && (
+                <Tag>
+                  <a href={data.keycap.links[0].vendor}>Vendor</a>
+                </Tag>
+              )}
+              {data.keycap.links[0].interest_check && (
+                <Tag>
+                  <a href={data.keycap.links[0].interest_check}>
+                    Interest Check
+                  </a>
+                </Tag>
+              )}
+            </>
+          )}
         </ul>
+
         <details className={styles.YouTube}>
           <summary>Sound Test Video</summary>
           <div className={styles.EmbedWrapper}>

@@ -3,7 +3,7 @@ import { request, gql } from "graphql-request";
 
 import { PageLayout } from "@/layouts/PageLayout";
 
-const endpoint = process.env.GRAPHQL_ENDPOINT;
+const endpoint = process.env.PROD_GRAPHQL_ENDPOINT;
 const query = gql`
   query {
     keyboards(sort: "name") {

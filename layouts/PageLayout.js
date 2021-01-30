@@ -35,7 +35,7 @@ export function PageLayout({ data, children }) {
         <title>futurebrian</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.Main} style={{ height: "200vh" }}>
+      <main className={styles.Main}>
         {breakpoint !== "desktop" && (
           <Navbar
             toggleMenu={() => setMenuOpen(!isMenuOpen)}
