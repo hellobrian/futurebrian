@@ -63,11 +63,13 @@ export default function Keyboard({ data }) {
   return (
     <PageLayout data={data}>
       <div className={styles.Container}>
-        <img
-          className={styles.MainImage}
-          src={`${strapiUrl}${data.keyboard.hero_image.url}`}
-          alt={data.keyboard.hero_image.alternativeText}
-        />
+        {data.keyboard.hero_image && (
+          <img
+            className={styles.MainImage}
+            src={`${strapiUrl}${data.keyboard.hero_image.url}`}
+            alt={data.keyboard.hero_image.alternativeText}
+          />
+        )}
         <h2 className="fs--9 fw--normal ta--center">{data.keyboard.name}</h2>
         <ul
           className={`${styles.List} ta--center mb--7`}
