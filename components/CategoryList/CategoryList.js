@@ -132,6 +132,7 @@ export function CategoryList({ data, variant, setMenuOpen }) {
 
 CategoryList.propTypes = {
   variant: PropTypes.oneOf(VARIANTS),
+  setMenuOpen: PropTypes.func,
   data: PropTypes.shape({
     keyboards: PropTypes.arrayOf(
       PropTypes.shape({
