@@ -7,8 +7,8 @@ const VARIANTS = ["keyboards", "keycaps", "socials"];
 function HeadingWrapper({ heading, info }) {
   return (
     <div className={`${styles.HeadingWrapper} mb--3`}>
-      <h2 className={`heading ta--left fs--6 fw--normal px--3`}>{heading}</h2>
-      <p className="ff--bebas fs--6 px--3">{info}</p>
+      <h2 className={`heading ta--left fw--normal px--3 fs--4`}>{heading}</h2>
+      <p className="ff--bebas px--3 fs--4">{info}</p>
     </div>
   );
 }
@@ -28,7 +28,7 @@ List.propTypes = {
 
 function ListItem({ children }) {
   return (
-    <li className={`${styles.ListItem} fs--5`}>
+    <li className={`${styles.ListItem}`}>
       <span className="name">{children}</span>
     </li>
   );
