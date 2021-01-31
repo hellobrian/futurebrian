@@ -26,7 +26,7 @@ export function useBreakpoint() {
   return { breakpoint };
 }
 
-export function PageLayout({ data, children }) {
+export function PageLayout({ children }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { breakpoint } = useBreakpoint();
   return (
@@ -66,10 +66,7 @@ export function PageLayout({ data, children }) {
                 isMenuOpen={isMenuOpen}
                 variant={breakpoint}
               />
-              <MenuComponent
-                data={data}
-                setMenuOpen={setMenuOpen}
-              ></MenuComponent>
+              <MenuComponent setMenuOpen={setMenuOpen}></MenuComponent>
             </div>
             <div className={styles.Content}>{children}</div>
           </>

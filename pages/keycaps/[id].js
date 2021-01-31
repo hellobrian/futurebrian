@@ -32,14 +32,6 @@ export async function getStaticProps({ params }) {
           alternativeText
         }
       }
-      keyboards(sort: "name") {
-        id
-        name
-      }
-      keycaps(sort: "name") {
-        id
-        name
-      }
     }
   `;
 
@@ -55,11 +47,9 @@ export async function getStaticProps({ params }) {
 
 export default function Keycap({ data }) {
   return (
-    <PageLayout>
-      <DetailPageLayout
-        heroImage={data.keycap.hero_image}
-        name={data.keycap.name}
-      />
-    </PageLayout>
+    <DetailPageLayout
+      heroImage={data.keycap.hero_image}
+      name={data.keycap.name}
+    />
   );
 }
