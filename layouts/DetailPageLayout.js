@@ -12,7 +12,7 @@ export function DetailPageLayout({ heroImage, name }) {
     <div className={styles.Container}>
       {heroImage && (
         <img
-          className={styles.MainImage}
+          className={`${styles.MainImage} ${styles.Full}`}
           src={imgUrl}
           alt={heroImage.alternativeText}
         />
