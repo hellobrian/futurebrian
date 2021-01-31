@@ -27,7 +27,7 @@ export async function getStaticProps() {
 
 export default function Home({ data }) {
   return (
-    <PageLayout data={data}>
+    <PageLayout>
       <h1>whut up</h1>
     </PageLayout>
   );

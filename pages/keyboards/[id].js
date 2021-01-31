@@ -56,7 +56,7 @@ export async function getStaticProps({ params }) {
 
 export default function Keyboard({ data }) {
   return (
-    <PageLayout data={data}>
+    <PageLayout>
       <DetailPageLayout
         heroImage={data.keyboard.hero_image}
         name={data.keyboard.name}

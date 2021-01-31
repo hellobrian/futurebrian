@@ -55,7 +55,7 @@ export async function getStaticProps({ params }) {
 
 export default function Keycap({ data }) {
   return (
-    <PageLayout data={data}>
+    <PageLayout>
       <DetailPageLayout
         heroImage={data.keycap.hero_image}
         name={data.keycap.name}

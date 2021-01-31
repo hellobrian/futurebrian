@@ -46,14 +46,14 @@ export function PageLayout({ data, children }) {
 
         {breakpoint === "mobile" && (
           <div className={styles.Content}>
-            {isMenuOpen && <MenuComponent data={data} />}
+            {isMenuOpen && <MenuComponent setMenuOpen={setMenuOpen} />}
             {!isMenuOpen && children}
           </div>
         )}
 
         {breakpoint === "tablet" && (
           <div className={styles.Content}>
-            {isMenuOpen && <MenuComponent data={data} />}
+            {isMenuOpen && <MenuComponent setMenuOpen={setMenuOpen} />}
             {!isMenuOpen && children}
           </div>
         )}
