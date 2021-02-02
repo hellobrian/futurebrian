@@ -28,6 +28,7 @@ export async function getStaticProps({ params }) {
       keyboard(id: $id) {
         id
         name
+        blog
         hero_image {
           url
           alternativeText
@@ -46,11 +47,10 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Keyboard({ data }) {
-  return (
-    <DetailPageLayout
-      heroImage={data.keyboard.hero_image}
-      name={data.keyboard.name}
-    />
-  );
+export default function Keyboard({
+  data: {
+    keyboard: { name, hero_image, blog },
+  },
+}) {
+  return <DetailPageLayout heroImage={hero_image} name={name} blog={blog} />;
 }
