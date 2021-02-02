@@ -14,10 +14,7 @@
 
 .MainImage {
   object-fit: cover;
-  object-position: -10% center;
-  /* border-bottom: 1px solid black; */
   width: 100%;
-  max-height: 80vh;
 }
 
 .YouTube {
@@ -69,7 +66,6 @@
 
 .List {
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   max-width: 400px;
