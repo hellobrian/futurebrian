@@ -31,13 +31,12 @@ h1,
 h2,
 h3 {
   font-family: var(--bebas);
-  line-height: 1.5;
+  line-height: 1.75;
 }
 
-p,
-a {
+p {
   font-family: var(--plex);
-  line-height: 1;
+  line-height: 1.4;
 }
 
 a {

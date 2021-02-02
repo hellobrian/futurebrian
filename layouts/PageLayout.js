@@ -29,12 +29,14 @@ export function useBreakpoint() {
 export function PageLayout({ children }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { breakpoint } = useBreakpoint();
+
   return (
     <>
       <Head>
         <title>futurebrian</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className={styles.Main}>
         {breakpoint !== "desktop" && (
           <Navbar
