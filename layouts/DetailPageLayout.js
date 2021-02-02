@@ -1,3 +1,4 @@
+import ReactMarkdown from "react-markdown";
 import styles from "./DetailPageLayout.module.css";
 
 const strapiUrl = process.env.NEXT_PUBLIC_PROD_URL;
@@ -6,7 +7,8 @@ function Tag({ children }) {
   return <li className={styles.ListItem}>{children}</li>;
 }
 
-export function DetailPageLayout({ heroImage, name }) {
+export function DetailPageLayout({ heroImage, name, blog, round }) {
+  console.log({ blog });
   const imgUrl = heroImage ? `${strapiUrl}${heroImage.url}` : null;
   return (
     <div className={styles.Container}>
@@ -22,9 +24,9 @@ export function DetailPageLayout({ heroImage, name }) {
         className={`${styles.List} ta--center mb--7`}
         style={{ width: "100%" }}
       >
-        <Tag>Tag</Tag>
+        {round && <Tag>Round {round}</Tag>}
       </ul>
-      <details className={styles.YouTube}>
+      {/* <details className={styles.YouTube}>
         <summary>Sound Test Video</summary>
         <div className={styles.EmbedWrapper}>
           <iframe
@@ -36,30 +38,20 @@ export function DetailPageLayout({ heroImage, name }) {
             allowFullScreen
           ></iframe>
         </div>
-      </details>
+      </details> */}
 
-      <p className={`${styles.Post}`}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-        perspiciatis corporis nemo natus veniam. Harum doloremque corrupti
-        velit! Debitis sint odit corrupti vel cum esse animi saepe facilis,
-        dignissimos quam! Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Nostrum perspiciatis corporis nemo natus veniam. Harum doloremque
-        corrupti velit! Debitis sint odit corrupti vel cum esse animi saepe
-        facilis, dignissimos quam! Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Nostrum perspiciatis corporis nemo natus veniam. Harum
-        doloremque corrupti velit! Debitis sint odit corrupti vel cum esse animi
-        saepe facilis, dignissimos quam! Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Nostrum perspiciatis corporis nemo natus veniam. Harum
-        doloremque corrupti velit! Debitis sint odit corrupti vel cum esse animi
-        saepe facilis, dignissimos quam!
-      </p>
-      <div className={styles.Gallery}>
+      {blog && (
+        <div className={`${styles.Post}`}>
+          <ReactMarkdown source={blog} />
+        </div>
+      )}
+      {/* <div className={styles.Gallery}>
         <img
           className={styles.Image}
           src="/keyboards/photos/ava-yellow.jpg"
           alt="ava"
         />
-      </div>
+      </div> */}
     </div>
   );
 }
