@@ -12,7 +12,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: left;
-  align-items: baseline;
+  align-items: center;
 }
 
 .Navbar[data-variant="desktop"] {
@@ -27,7 +27,6 @@
 
 .Heading {
   font-size: var(--size6);
-  line-height: 1.5;
   justify-self: center;
 }
 
@@ -36,10 +35,12 @@
   justify-content: center;
   align-items: center;
   margin-right: var(--size1);
-  height: 100%;
+  height: var(--size6);
+  width: var(--size6);
+  padding: var(--size1);
 }
 
 .Button > svg {
-  height: var(--size4);
-  width: var(--size4);
+  height: var(--size6);
+  width: var(--size6);
 }

@@ -1,6 +1,6 @@
 .Section {
   /* border: 1px solid black; */
-  margin: var(--size3);
+  margin: var(--size3) 0;
 }
 
 .HeadingWrapper {
@@ -9,10 +9,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
+  color: black;
+  background: transparent;
   height: var(--size9);
   /* border-top: 2px solid black; */
   /* box-shadow: var(--shadow); */
+}
+
+@media screen and (min-width: 1200px) {
+  .HeadingWrapper {
+    background: white;
+  }
 }
 
 .List {
@@ -31,8 +38,8 @@
 
 .ListItem {
   /* border: 1px solid black; */
-  padding-top: var(--size4);
-  padding-bottom: var(--size4);
+  padding-top: var(--size2);
+  padding-bottom: var(--size2);
   width: 100%;
   font-weight: 400;
   font-size: var(--size8);
