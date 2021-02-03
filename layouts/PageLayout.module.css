@@ -1,6 +1,6 @@
 .Main {
   display: grid;
-  grid-template-rows: 58px 1fr;
+  grid-template-rows: var(--navbarHeight) 1fr;
 }
 
 .Content {
@@ -20,7 +20,7 @@
     bottom: 0;
     left: 0;
     width: 400px;
-    border-right: 1px solid black;
+    /* border-right: 1px solid black; */
   }
 
   .Content {
