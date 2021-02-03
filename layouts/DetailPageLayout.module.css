@@ -16,11 +16,12 @@
   object-fit: cover;
   width: 100%;
   grid-column: 2/5;
+  box-shadow: var(--shadow);
 }
 
 @media screen and (min-width: 768px) {
   .MainImage {
-    padding: var(--navbarHeight) 0;
+    margin: var(--navbarHeight) 0;
   }
 }
 

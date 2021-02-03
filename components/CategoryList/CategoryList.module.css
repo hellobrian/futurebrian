@@ -1,5 +1,5 @@
 .Section {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: var(--size3);
 }
 
@@ -11,7 +11,8 @@
   align-items: center;
   background: white;
   height: var(--size9);
-  border-bottom: 1px solid black;
+  /* border-top: 2px solid black; */
+  /* box-shadow: var(--shadow); */
 }
 
 .List {
@@ -22,8 +23,14 @@
   padding: var(--size2);
 }
 
+@media screen and (min-width: 1200px) {
+  .List {
+    text-align: right;
+  }
+}
+
 .ListItem {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding-top: var(--size4);
   padding-bottom: var(--size4);
   width: 100%;
