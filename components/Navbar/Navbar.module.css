@@ -4,8 +4,6 @@
   padding: 8px 16px;
   background: white;
   z-index: var(--layer--navbar);
-  /* border-bottom: 1px solid black; */
-  /* box-shadow: var(--shadow); */
 }
 
 .Navbar > nav {
@@ -17,7 +15,7 @@
 
 .Navbar[data-variant="desktop"] {
   padding: 8px 0;
-  width: 400px;
+  width: 300px;
 }
 
 .Navbar[data-variant="desktop"] > nav {

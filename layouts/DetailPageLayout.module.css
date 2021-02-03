@@ -17,9 +17,17 @@
   background-color: white;
   padding: 24px;
   transition: height 200ms;
-  min-height: 500px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  min-height: unset;
+}
+
+@media screen and (min-width: 1200px) {
+  .MainImage {
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow);
+    min-height: 500px;
+  }
 }
 
 .MainImage > img {

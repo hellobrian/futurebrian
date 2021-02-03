@@ -19,8 +19,8 @@
     top: 0;
     bottom: 0;
     left: 0;
-    width: 400px;
-    /* border-right: 1px solid black; */
+    width: 300px;
+    padding: 0 var(--size2);
   }
 
   .Content {
