@@ -13,11 +13,25 @@
 }
 
 .MainImage {
-  object-fit: cover;
-  width: 100%;
-
   grid-column: 2/5;
+  background-color: white;
+  padding: 24px;
+  transition: height 200ms;
+  min-height: 500px;
+  overflow: hidden;
   box-shadow: var(--shadow);
+}
+
+.MainImage > img {
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+}
+
+.MainImage > img[data-src]::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
 }
 
 @media screen and (min-width: 768px) {

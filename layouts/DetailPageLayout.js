@@ -35,14 +35,19 @@ function MainImage({ imgUrl, alternativeText }) {
   }, [loaded]);
 
   return (
-    <img
-      ref={image}
-      className={`${styles.MainImage}`}
-      src={imgUrl}
-      alt={alternativeText}
-      onLoad={handleLoad}
-      style={{ opacity, transition: "opacity 200ms" }}
-    />
+    <div className={styles.MainImage}>
+      <img
+        ref={image}
+        data-src={imgUrl}
+        src={imgUrl}
+        alt={alternativeText}
+        onLoad={handleLoad}
+        style={{
+          opacity,
+          transition: "opacity 200ms",
+        }}
+      />
+    </div>
   );
 }
 
