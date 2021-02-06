@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useMediaQuery } from "react-responsive";
 import Toggle from "react-toggle";
 
 import styles from "./DarkToggle.module.css";
