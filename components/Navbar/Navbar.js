@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
 
+import { DarkToggle } from "@/components/DarkToggle/DarkToggle";
 import { IconMenu, IconClose } from "@/components/Icons/Icons";
 import styles from "./Navbar.module.css";
 
@@ -32,11 +33,14 @@ export function Navbar({ toggleMenu, isMenuOpen, variant = "mobile" }) {
 
         <h1 className={styles.Heading}>
           <Link href="/">
-            <a className="ff--bebas" title="click here to go home">
+            <a className="ff--bebas fancy-link" title="click here to go home">
               futurebrian
             </a>
           </Link>
         </h1>
+        <div className={styles.DarkToggle}>
+          <DarkToggle></DarkToggle>
+        </div>
       </nav>
     </header>
   );

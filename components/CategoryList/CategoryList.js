@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "./CategoryList.module.css";
 
 const VARIANTS = ["keyboards", "keycaps", "socials"];
@@ -40,6 +41,9 @@ ListItem.propTypes = {
 };
 
 export function CategoryList({ data, variant, setMenuOpen }) {
+  const router = useRouter();
+  console.log({ router });
+
   return (
     <section className={`${styles.Section} mb--7`}>
       {variant === "keyboards" && (
@@ -66,7 +70,13 @@ export function CategoryList({ data, variant, setMenuOpen }) {
             return (
               <ListItem key={keyboard.id} variant={variant}>
                 <Link href={`/keyboards/${keyboard.id}`}>
-                  <a className="ff--bebas" onClick={() => setMenuOpen(false)}>
+                  <a
+                    className={`ff--bebas ${
+                      router.asPath === `/keyboards/${keyboard.id}` &&
+                      "fancy-link"
+                    }`}
+                    onClick={() => setMenuOpen(false)}
+                  >
                     {keyboard.name}
                   </a>
                 </Link>
@@ -78,7 +88,12 @@ export function CategoryList({ data, variant, setMenuOpen }) {
             return (
               <ListItem key={id} variant={variant}>
                 <Link href={`/keycaps/${id}`}>
-                  <a className="ff--bebas" onClick={() => setMenuOpen(false)}>
+                  <a
+                    className={`ff--bebas ${
+                      router.asPath === `/keycaps/${id}` && "fancy-link"
+                    }`}
+                    onClick={() => setMenuOpen(false)}
+                  >
                     {name}
                   </a>
                 </Link>

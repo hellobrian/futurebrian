@@ -1,0 +1,15 @@
+.DarkToggle {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.Toggle {
+  margin: 0 var(--size2);
+}
+
+.DarkToggle > button {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+}

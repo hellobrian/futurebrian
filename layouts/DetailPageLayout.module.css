@@ -14,8 +14,8 @@
 
 .MainImage {
   grid-column: 2/5;
-  background-color: white;
-  padding: 24px;
+  background-color: var(--primaryBackgroundColor);
+  border: 24px solid var(--primaryBackgroundColor);
   transition: height 200ms;
   overflow: hidden;
   min-height: unset;

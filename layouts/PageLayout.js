@@ -63,12 +63,14 @@ export function PageLayout({ children }) {
         {breakpoint === "desktop" && (
           <>
             <div className={styles.Sidebar}>
-              <Navbar
-                toggleMenu={() => setMenuOpen(!isMenuOpen)}
-                isMenuOpen={isMenuOpen}
-                variant={breakpoint}
-              />
-              <MenuComponent setMenuOpen={setMenuOpen}></MenuComponent>
+              <div className={styles.InnerSidebar}>
+                <Navbar
+                  toggleMenu={() => setMenuOpen(!isMenuOpen)}
+                  isMenuOpen={isMenuOpen}
+                  variant={breakpoint}
+                />
+                <MenuComponent setMenuOpen={setMenuOpen}></MenuComponent>
+              </div>
             </div>
             <div className={styles.Content}>{children}</div>
           </>

@@ -21,6 +21,19 @@
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+html {
+  --primaryBackgroundColor: white;
+  --primaryTextColor: black;
+}
+
+html.dark {
+  --primaryBackgroundColor: black;
+  --primaryTextColor: white;
+
+  background: var(--primaryBackgroundColor);
+  color: var(--primaryTextColor);
+}
+
 body {
   overflow-y: scroll;
   font-family: var(--roboto);
@@ -164,4 +177,35 @@ button {
 
 .ta--center {
   text-align: center;
+}
+
+/* styles */
+.fancy-link {
+  --slot3: #ca106d;
+  --slot4: rgb(148, 41, 236);
+  --slot5: #3e3edd;
+  border-bottom: 4px solid black;
+  border-image: linear-gradient(
+      70deg,
+      var(--slot3) 35%,
+      var(--slot4) 70%,
+      var(--slot5)
+    )
+    1;
+}
+
+.react-toggle-track {
+  background-color: #ca106d !important;
+}
+
+.react-toggle-thumb {
+  border-color: #ca106d !important;
+}
+
+.react-toggle--checked .react-toggle-track {
+  background-color: #4834d4 !important;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+  border-color: #4834d4 !important;
 }

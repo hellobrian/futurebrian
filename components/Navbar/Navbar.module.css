@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   padding: 8px 16px;
-  background: white;
+  background: var(--primaryBackgroundColor);
   z-index: var(--layer--navbar);
 }
 
@@ -15,7 +15,7 @@
 
 .Navbar[data-variant="desktop"] {
   padding: 8px 0;
-  width: 300px;
+  width: 350px;
 }
 
 .Navbar[data-variant="desktop"] > nav {
@@ -26,6 +26,17 @@
 .Heading {
   font-size: var(--size6);
   justify-self: center;
+  font-weight: 400;
+}
+
+.DarkToggle {
+  justify-self: right;
+}
+
+[data-variant="desktop"] .DarkToggle {
+  position: fixed;
+  right: 8px;
+  top: 24px;
 }
 
 .Button {
@@ -39,6 +50,7 @@
 }
 
 .Button > svg {
+  fill: var(--primaryTextColor);
   height: var(--size6);
   width: var(--size6);
 }
