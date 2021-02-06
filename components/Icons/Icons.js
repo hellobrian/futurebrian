@@ -1,6 +1,7 @@
 export const IconYoutube = ({ ...props }) => (
   <svg
     {...props}
+    fill="var(--primaryTextColor)"
     xmlns="http://www.w3.org/2000/svg"
     width="32"
     height="32"
@@ -13,6 +14,7 @@ export const IconYoutube = ({ ...props }) => (
 export const IconClose = ({ ...props }) => (
   <svg
     {...props}
+    fill="var(--primaryTextColor)"
     xmlns="http://www.w3.org/2000/svg"
     width="32"
     height="32"
@@ -25,6 +27,7 @@ export const IconClose = ({ ...props }) => (
 export const IconInstagram = ({ ...props }) => (
   <svg
     {...props}
+    fill="var(--primaryTextColor)"
     xmlns="http://www.w3.org/2000/svg"
     width="32"
     height="32"
@@ -38,6 +41,7 @@ export const IconInstagram = ({ ...props }) => (
 export const IconMenu = ({ ...props }) => (
   <svg
     {...props}
+    fill="var(--primaryTextColor)"
     xmlns="http://www.w3.org/2000/svg"
     width="32"
     height="32"
@@ -50,6 +54,7 @@ export const IconMenu = ({ ...props }) => (
 export const IconReddit = ({ ...props }) => (
   <svg
     {...props}
+    fill="var(--primaryTextColor)"
     xmlns="http://www.w3.org/2000/svg"
     width="32"
     height="32"
@@ -62,6 +67,7 @@ export const IconReddit = ({ ...props }) => (
 export function IconMoon() {
   return (
     <svg
+      fill="var(--primaryTextColor)"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -75,6 +81,7 @@ export function IconMoon() {
 export function IconSun() {
   return (
     <svg
+      fill="var(--primaryTextColor)"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"

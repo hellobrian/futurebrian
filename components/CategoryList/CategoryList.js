@@ -1,6 +1,12 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
 import { useRouter } from "next/router";
+
+import {
+  IconYoutube,
+  IconReddit,
+  IconInstagram,
+} from "@/components/Icons/Icons";
 import styles from "./CategoryList.module.css";
 
 const VARIANTS = ["keyboards", "keycaps", "socials"];
@@ -60,9 +66,7 @@ export function CategoryList({ data, variant, setMenuOpen }) {
         />
       )}
 
-      {variant === "socials" && (
-        <HeadingWrapper heading={"Socials"} info="Follow Me" />
-      )}
+      {/* {variant === "socials" && <HeadingWrapper heading={"Socials"} info="" />} */}
 
       <List>
         {variant === "keyboards" &&
@@ -109,25 +113,26 @@ export function CategoryList({ data, variant, setMenuOpen }) {
             );
           })}
         {variant === "socials" && (
-          <>
-            <ListItem>
-              <a
-                onClick={() => setMenuOpen(false)}
-                className="ff--bebas"
-                href="https://www.instagram.com/futurebrian_/"
-              >
-                instagram
-              </a>
-            </ListItem>
+          <div className={styles.Socials}>
             <ListItem>
               <a
                 onClick={() => setMenuOpen(false)}
                 className="ff--bebas"
                 href="https://www.youtube.com/channel/UCQGq3OYhoZJrlRaemSCe6Zg"
               >
-                youtube
+                <IconYoutube></IconYoutube>
               </a>
             </ListItem>
+            <ListItem>
+              <a
+                onClick={() => setMenuOpen(false)}
+                className="ff--bebas"
+                href="https://www.instagram.com/futurebrian_/"
+              >
+                <IconInstagram></IconInstagram>
+              </a>
+            </ListItem>
+
             <ListItem>
               {" "}
               <a
@@ -135,10 +140,10 @@ export function CategoryList({ data, variant, setMenuOpen }) {
                 className="ff--bebas"
                 href="https://www.reddit.com/user/futurebrian"
               >
-                reddit
+                <IconReddit></IconReddit>
               </a>
             </ListItem>
-          </>
+          </div>
         )}
       </List>
     </section>

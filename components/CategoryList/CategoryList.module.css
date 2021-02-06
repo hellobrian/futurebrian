@@ -7,18 +7,17 @@
   position: sticky;
   top: 57px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   color: var(--primaryTextColor);
-  background: transparent;
+  background: var(--primaryBackgroundColor);
   height: var(--size9);
-  /* border-top: 2px solid black; */
-  /* box-shadow: var(--shadow); */
 }
 
 @media screen and (min-width: 1200px) {
   .HeadingWrapper {
     background: var(--primaryBackgroundColor);
+    justify-content: space-between;
   }
 }
 
@@ -46,4 +45,10 @@
   font-family: var(--bebas);
   text-transform: uppercase;
   overflow: hidden;
+}
+
+.Socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
