@@ -66,8 +66,6 @@ export function CategoryList({ data, variant, setMenuOpen }) {
         />
       )}
 
-      {/* {variant === "socials" && <HeadingWrapper heading={"Socials"} info="" />} */}
-
       <List>
         {variant === "keyboards" &&
           data.keyboards.map((keyboard) => {
