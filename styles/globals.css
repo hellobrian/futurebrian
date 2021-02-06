@@ -1,7 +1,7 @@
 :root {
   --bebas: "Bebas Neue", cursive;
-  --plex: "IBM Plex Sans", sans-serif;
-  --raleway: "Raleway", sans-serif;
+  --vollkorn: "Vollkorn", serif;
+  --roboto: "Roboto", sans-serif;
   --size1: 4px;
   --size2: 8px;
   --size3: 16px;
@@ -23,7 +23,7 @@
 
 body {
   overflow-y: scroll;
-  font-family: var(--plex);
+  font-family: var(--roboto);
 }
 
 ul,
@@ -63,16 +63,16 @@ button {
 }
 
 /* font-family */
-.ff--plex {
-  font-family: var(--plex);
-}
-
-.ff--raleway {
-  font-family: var(--raleway);
-}
-
 .ff--bebas {
   font-family: var(--bebas);
+}
+
+.ff--vollkorn {
+  font-family: var(--vollkorn);
+}
+
+.ff--roboto {
+  font-family: var(--roboto);
 }
 
 /* font-size */

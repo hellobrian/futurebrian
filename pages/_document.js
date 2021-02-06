@@ -1,5 +1,16 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
+function getFonts() {
+  const baseUrl = `https://fonts.googleapis.com/css2`;
+  const FONTS = {
+    vollkorn: `family=Vollkorn:ital,wght@0,800;1,800`,
+    bebas: `family=Bebas+Neue`,
+    roboto: `family=Roboto`,
+  };
+  const fontStrings = Object.values(FONTS);
+  return `${baseUrl}?${fontStrings.join("&")}`;
+}
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -7,14 +18,13 @@ class MyDocument extends Document {
   }
 
   render() {
+    const fonts = getFonts();
+
     return (
       <Html lang="en">
         <Head>
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans&display=swap"
-            rel="stylesheet"
-          />
+          <link href={fonts} rel="stylesheet" />
         </Head>
         <body>
           <Main />
