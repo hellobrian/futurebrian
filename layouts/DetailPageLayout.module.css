@@ -1,16 +1,16 @@
 .Container {
   display: grid;
-  grid-template-columns: 1fr 1fr min(75ch, 100%) 1fr 1fr;
+  grid-template-columns: 1fr 1fr min(65ch, 100%) 1fr 1fr;
 }
 
 .Container > * {
   grid-column: 3;
 }
 
-.Full {
+/* .Full {
   width: 100%;
   grid-column: 1/6;
-}
+} */
 
 .MainImage {
   grid-column: 2/5;
@@ -22,6 +22,14 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .Container {
+    grid-template-columns: 100%;
+  }
+
+  .Container > * {
+    grid-column: 1;
+  }
+
   .MainImage {
     display: flex;
     align-items: center;
@@ -123,36 +131,17 @@
 }
 
 .Post h3 {
-  /* --slot3: #ca106d;
-  --slot4: rgb(148, 41, 236);
-  --slot5: #3e3edd;
-  background-image: linear-gradient(
-    70deg,
-    var(--slot3) 35%,
-    var(--slot4) 70%,
-    var(--slot5)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: var(--slot3); */
   font-family: var(--vollkorn);
   font-style: italic;
   font-weight: 800;
 }
 
 .Post a {
-  --slot3: #ca106d;
-  --slot4: rgb(148, 41, 236);
-  --slot5: #3e3edd;
   border-bottom: 2px solid black;
-  border-image: linear-gradient(
-      70deg,
-      var(--slot3) 35%,
-      var(--slot4) 70%,
-      var(--slot5)
-    )
-    1;
+  border-image: var(--gradient);
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
 }
 
 .Post > p,

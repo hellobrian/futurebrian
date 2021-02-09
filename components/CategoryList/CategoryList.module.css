@@ -11,7 +11,7 @@
   align-items: center;
   color: var(--primaryTextColor);
   background: var(--primaryBackgroundColor);
-  height: var(--size9);
+  height: var(--size8);
 }
 
 @media screen and (min-width: 1200px) {
@@ -27,6 +27,7 @@
   text-align: center;
   grid-template-columns: repeat(auto-fit, 1fr);
   padding: var(--size2);
+  padding-top: var(--size4);
 }
 
 @media screen and (min-width: 1200px) {
