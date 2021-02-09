@@ -192,7 +192,7 @@ button {
 
 /* styles */
 .fancy-link {
-  border: 4px solid black;
+  border-bottom: 4px solid black;
   border-image: var(--gradient);
   border-top-width: 0;
   border-right-width: 0;
