@@ -21,7 +21,7 @@
   min-height: unset;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .Container {
     grid-template-columns: 100%;
   }

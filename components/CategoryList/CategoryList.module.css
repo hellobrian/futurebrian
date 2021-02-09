@@ -14,7 +14,7 @@
   height: var(--size8);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .HeadingWrapper {
     background: var(--primaryBackgroundColor);
     justify-content: space-between;
@@ -30,7 +30,7 @@
   padding-top: var(--size4);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   .List {
     text-align: right;
   }
