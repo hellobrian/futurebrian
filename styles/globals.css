@@ -20,6 +20,16 @@
   --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --slot3: #ca106d;
+  --slot4: rgb(148, 41, 236);
+  --slot5: #3e3edd;
+  --gradient: linear-gradient(
+      70deg,
+      var(--slot3) 35%,
+      var(--slot4) 70%,
+      var(--slot5)
+    )
+    1;
 }
 
 html {
@@ -182,17 +192,11 @@ button {
 
 /* styles */
 .fancy-link {
-  --slot3: #ca106d;
-  --slot4: rgb(148, 41, 236);
-  --slot5: #3e3edd;
-  border-bottom: 4px solid black;
-  border-image: linear-gradient(
-      70deg,
-      var(--slot3) 35%,
-      var(--slot4) 70%,
-      var(--slot5)
-    )
-    1;
+  border: 4px solid black;
+  border-image: var(--gradient);
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
 }
 
 .react-toggle-track {
