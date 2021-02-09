@@ -48,7 +48,6 @@ ListItem.propTypes = {
 
 export function CategoryList({ data, variant, setMenuOpen }) {
   const router = useRouter();
-  console.log({ router });
 
   return (
     <section className={`${styles.Section} mb--7`}>
