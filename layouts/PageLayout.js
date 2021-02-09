@@ -8,8 +8,8 @@ import styles from "./PageLayout.module.css";
 
 export function useBreakpoint() {
   const [breakpoint, setBreakpoint] = useState(null);
-  const isTablet = useMedia({ minWidth: 768, maxWidth: 1199 });
-  const isDesktop = useMedia({ minWidth: 1200 });
+  const isTablet = useMedia({ minWidth: 768, maxWidth: 1023 });
+  const isDesktop = useMedia({ minWidth: 1024 });
 
   useEffect(() => {
     if (isTablet) {

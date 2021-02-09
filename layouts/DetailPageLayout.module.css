@@ -1,16 +1,16 @@
 .Container {
   display: grid;
-  grid-template-columns: 1fr 1fr min(75ch, 100%) 1fr 1fr;
+  grid-template-columns: 1fr 1fr min(65ch, 100%) 1fr 1fr;
 }
 
 .Container > * {
   grid-column: 3;
 }
 
-.Full {
+/* .Full {
   width: 100%;
   grid-column: 1/6;
-}
+} */
 
 .MainImage {
   grid-column: 2/5;
@@ -21,7 +21,15 @@
   min-height: unset;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
+  .Container {
+    grid-template-columns: 100%;
+  }
+
+  .Container > * {
+    grid-column: 1;
+  }
+
   .MainImage {
     display: flex;
     align-items: center;

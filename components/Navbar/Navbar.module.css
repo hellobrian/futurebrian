@@ -15,7 +15,7 @@
 
 .Navbar[data-variant="desktop"] {
   padding: 8px 0;
-  width: 350px;
+  width: var(--sidebarWidth);
 }
 
 .Navbar[data-variant="desktop"] > nav {

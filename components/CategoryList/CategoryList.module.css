@@ -11,10 +11,10 @@
   align-items: center;
   color: var(--primaryTextColor);
   background: var(--primaryBackgroundColor);
-  height: var(--size9);
+  height: var(--size8);
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .HeadingWrapper {
     background: var(--primaryBackgroundColor);
     justify-content: space-between;
@@ -27,9 +27,10 @@
   text-align: center;
   grid-template-columns: repeat(auto-fit, 1fr);
   padding: var(--size2);
+  padding-top: var(--size4);
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .List {
     text-align: right;
   }
