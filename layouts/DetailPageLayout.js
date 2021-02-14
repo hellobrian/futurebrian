@@ -51,38 +51,36 @@ function MainImage({ imgUrl, alternativeText }) {
   );
 }
 
-function YouTube() {
+function YouTube({ src, ...props }) {
   return (
-    <details className={styles.YouTube}>
-      <summary>Sound Test Video</summary>
-      <div className={styles.EmbedWrapper}>
-        <iframe
-          width="100%"
-          height="auto"
-          src="https://www.youtube.com/embed/g-vBr9a36NE"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
-    </details>
-  );
-}
-
-function Gallery() {
-  return (
-    <div className={styles.Gallery}>
-      <img
-        className={styles.Image}
-        src="/keyboards/photos/ava-yellow.jpg"
-        alt="ava"
-      />
+    <div className={styles.EmbedWrapper} {...props}>
+      <iframe
+        width="100%"
+        height="auto"
+        src={src}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
     </div>
   );
 }
 
-export function DetailPageLayout({ heroImage, name, blog, round }) {
+// function Gallery() {
+//   return (
+//     <div className={styles.Gallery}>
+//       <img
+//         className={styles.Image}
+//         src="/keyboards/photos/ava-yellow.jpg"
+//         alt="ava"
+//       />
+//     </div>
+//   );
+// }
+
+export function DetailPageLayout({ heroImage, name, blog, round, videos }) {
   const imgUrl = heroImage ? `${strapiUrl}${heroImage.url}` : null;
+
   return (
     <div className={styles.Container}>
       {heroImage && (
@@ -103,6 +101,23 @@ export function DetailPageLayout({ heroImage, name, blog, round }) {
       {blog && (
         <div className={`${styles.Post}`}>
           <ReactMarkdown source={blog} />
+        </div>
+      )}
+
+      {videos && (
+        <div className="mb--9">
+          <h3 className="fs--9 fw--normal ta--center">Videos</h3>
+          <div className={styles.Videos}>
+            <>
+              {videos.map((video) => (
+                <YouTube
+                  src={video.link}
+                  key={video.id}
+                  style={{ gridColumn: videos.length < 3 ? 2 : 1 }}
+                />
+              ))}
+            </>
+          </div>
         </div>
       )}
     </div>

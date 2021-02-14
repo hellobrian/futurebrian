@@ -1,6 +1,5 @@
 import { request, gql } from "graphql-request";
 
-import { PageLayout } from "@/layouts/PageLayout";
 import { DetailPageLayout } from "@/layouts/DetailPageLayout";
 
 const endpoint = process.env.PROD_GRAPHQL_ENDPOINT;
@@ -33,6 +32,11 @@ export async function getStaticProps({ params }) {
           url
           alternativeText
         }
+        videos {
+          id
+          name
+          link
+        }
       }
     }
   `;
@@ -49,8 +53,15 @@ export async function getStaticProps({ params }) {
 
 export default function Keyboard({
   data: {
-    keyboard: { name, hero_image, blog },
+    keyboard: { name, hero_image, blog, videos },
   },
 }) {
-  return <DetailPageLayout heroImage={hero_image} name={name} blog={blog} />;
+  return (
+    <DetailPageLayout
+      heroImage={hero_image}
+      name={name}
+      blog={blog}
+      videos={videos}
+    />
+  );
 }
