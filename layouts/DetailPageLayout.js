@@ -61,7 +61,7 @@ function YouTube({ src, ...props }) {
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-      ></iframe>
+      />
     </div>
   );
 }
@@ -89,8 +89,8 @@ export function DetailPageLayout({ heroImage, name, blog, round, videos }) {
           alternativeText={heroImage.alternativeText}
         />
       )}
-
       <h2 className="fs--9 fw--normal ta--center">{name}</h2>
+
       <ul
         className={`${styles.List} ta--center mb--7`}
         style={{ width: "100%" }}

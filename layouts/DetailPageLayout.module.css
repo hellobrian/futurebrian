@@ -33,6 +33,7 @@
   .MainImage {
     display: flex;
     align-items: center;
+    justify-content: center;
     box-shadow: var(--shadow);
     min-height: 500px;
   }
