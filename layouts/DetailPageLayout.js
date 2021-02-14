@@ -104,7 +104,7 @@ export function DetailPageLayout({ heroImage, name, blog, round, videos }) {
         </div>
       )}
 
-      {videos && (
+      {videos.length > 0 && (
         <div className="mb--9">
           <h3 className="fs--9 fw--normal ta--center">Videos</h3>
           <div className={styles.Videos}>
