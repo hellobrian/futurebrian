@@ -33,6 +33,11 @@ export async function getStaticProps({ params }) {
           url
           alternativeText
         }
+        videos {
+          id
+          name
+          link
+        }
       }
     }
   `;
@@ -49,7 +54,7 @@ export async function getStaticProps({ params }) {
 
 export default function Keycap({
   data: {
-    keycap: { hero_image, name, blog, round },
+    keycap: { hero_image, name, blog, round, videos },
   },
 }) {
   return (
@@ -58,6 +63,7 @@ export default function Keycap({
       name={name}
       blog={blog}
       round={round}
+      videos={videos}
     />
   );
 }
