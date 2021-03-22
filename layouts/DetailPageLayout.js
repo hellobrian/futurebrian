@@ -110,11 +110,7 @@ export function DetailPageLayout({ heroImage, name, blog, round, videos }) {
           <div className={styles.Videos}>
             <>
               {videos.map((video) => (
-                <YouTube
-                  src={video.link}
-                  key={video.id}
-                  style={{ gridColumn: videos.length < 3 ? 2 : 1 }}
-                />
+                <YouTube src={video.link} key={video.id} />
               ))}
             </>
           </div>

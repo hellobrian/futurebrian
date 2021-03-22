@@ -1,5 +1,4 @@
 import { request, gql } from "graphql-request";
-import { PageLayout } from "@/layouts/PageLayout";
 import { DetailPageLayout } from "@/layouts/DetailPageLayout";
 
 const endpoint = process.env.PROD_GRAPHQL_ENDPOINT;
