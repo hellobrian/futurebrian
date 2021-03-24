@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import ReactMarkdown from "react-markdown";
 import styles from "./DetailPageLayout.module.css";
+import { YouTube } from "@/components/YouTube/YouTube";
 
 const strapiUrl = process.env.NEXT_PUBLIC_PROD_URL;
 
@@ -46,21 +47,6 @@ function MainImage({ imgUrl, alternativeText }) {
           opacity,
           transition: "opacity 200ms",
         }}
-      />
-    </div>
-  );
-}
-
-function YouTube({ src, ...props }) {
-  return (
-    <div className={styles.EmbedWrapper} {...props}>
-      <iframe
-        width="100%"
-        height="auto"
-        src={src}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
       />
     </div>
   );
