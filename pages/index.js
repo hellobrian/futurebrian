@@ -23,7 +23,7 @@ export async function getStaticProps() {
   };
 }
 
-const linkClassName = `fs--7 ${styles.link} fancy-link`;
+const linkClassName = `fs--8 ${styles.link}`;
 
 export default function Home({ data }) {
   const { videos } = data;
