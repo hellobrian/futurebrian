@@ -23,7 +23,7 @@ export async function getStaticProps() {
   };
 }
 
-const linkClassName = `fs--8 ${styles.link}`;
+const linkClassName = `fs--6 ${styles.link}`;
 
 export default function Home({ data }) {
   const { videos } = data;
@@ -35,10 +35,8 @@ export default function Home({ data }) {
       <div className={styles.LinkTree}>
         <section className={styles.Section}>
           <h2 className={`fs--4 fw--normal ${styles.Headings}`}>
-            <IconYoutube
-              style={{ fill: "black", marginRight: 8 }}
-            ></IconYoutube>{" "}
-            watch latest video
+            <IconYoutube style={{ fill: "black", marginRight: 8 }} /> watch
+            latest video
           </h2>
           <a href={latestVideo.link} className={linkClassName}>
             {latestVideo.name}

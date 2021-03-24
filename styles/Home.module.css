@@ -17,7 +17,7 @@
 }
 
 .LinkTree .Section {
-  margin-bottom: 32px;
+  margin-bottom: 64px;
   padding: 0 8px;
 }
 
@@ -36,4 +36,6 @@
   margin-bottom: 24px;
   text-align: center;
   font-family: var(--bebas);
+  border: 1px solid white;
+  padding: 4px;
 }
