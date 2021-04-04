@@ -1,6 +1,6 @@
 import { request, gql } from "graphql-request";
 import styles from "@/styles/Home.module.css";
-import { IconYoutube } from "@/components/Icons/Icons";
+import { IconYoutube, IconTwitch } from "@/components/Icons/Icons";
 
 const endpoint = process.env.PROD_GRAPHQL_ENDPOINT;
 
@@ -41,6 +41,16 @@ export default function Home({ data }) {
           <a href={latestVideo.link} className={linkClassName}>
             {latestVideo.name}
           </a>
+          <h2 className={`fs--4 fw--normal ${styles.Headings}`}>
+            <IconTwitch style={{ fill: "black", marginRight: 8 }} /> watch
+            latest stream
+          </h2>
+          <a
+            href={"https://www.twitch.tv/videos/975525155"}
+            className={linkClassName}
+          >
+            Dressing up keebs with GMK Hennesey + ePBT BOW
+          </a>
         </section>
         <section className={styles.Section}>
           <h2 className={`fs--4 fw--normal ${styles.Headings}`}>socials</h2>
@@ -49,6 +59,9 @@ export default function Home({ data }) {
             className={linkClassName}
           >
             youtube
+          </a>
+          <a href="https://www.twitch.tv/futurebrian" className={linkClassName}>
+            twitch
           </a>
           <a
             href="https://www.instagram.com/futurebrian_/"
