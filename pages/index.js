@@ -42,6 +42,22 @@ export default function Home({ data }) {
             {latestVideo.name}
           </a>
           <h2 className={`fs--4 fw--normal ${styles.Headings}`}>
+            <IconYoutube style={{ fill: "black", marginRight: 8 }} />
+            YouTube Playlists
+          </h2>
+          <a
+            href="https://www.youtube.com/watch?v=Br-tTvCH2Q4&list=PLtLwzh2iLsjdftHzaraRQcDAoyyolLlpd"
+            className={linkClassName}
+          >
+            tutorials
+          </a>
+          <a
+            href="https://www.youtube.com/watch?v=Qe90FVYkPO4&list=PLtLwzh2iLsjcpuhfjjcYH9yE538cz-zlj"
+            className={linkClassName}
+          >
+            Rama Thermal videos
+          </a>
+          <h2 className={`fs--4 fw--normal ${styles.Headings}`}>
             <IconTwitch style={{ fill: "black", marginRight: 8 }} /> watch
             latest stream
           </h2>
