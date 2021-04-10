@@ -11,7 +11,7 @@ export async function getStaticProps() {
         created_at
         id
         name
-        link
+        direct_link
       }
     }
   `;
@@ -38,7 +38,7 @@ export default function Home({ data }) {
             <IconYoutube style={{ fill: "black", marginRight: 8 }} /> watch
             latest video
           </h2>
-          <a href={latestVideo.link} className={linkClassName}>
+          <a href={latestVideo.direct_link} className={linkClassName}>
             {latestVideo.name}
           </a>
           <h2 className={`fs--4 fw--normal ${styles.Headings}`}>

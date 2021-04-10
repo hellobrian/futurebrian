@@ -35,7 +35,7 @@ export async function getStaticProps({ params }) {
         videos {
           id
           name
-          link
+          embed_link
         }
       }
     }

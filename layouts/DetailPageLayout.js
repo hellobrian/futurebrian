@@ -96,7 +96,7 @@ export function DetailPageLayout({ heroImage, name, blog, round, videos }) {
           <div className={styles.Videos}>
             <>
               {videos.map((video) => (
-                <YouTube src={video.link} key={video.id} />
+                <YouTube src={video.embed_link} key={video.id} />
               ))}
             </>
           </div>
