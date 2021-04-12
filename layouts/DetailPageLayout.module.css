@@ -57,14 +57,23 @@
   }
 }
 
+.GalleryWrapper {
+  overflow-x: auto;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.GalleryWrapper::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 .Gallery {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: var(--size2);
   margin: 0 auto;
   margin-bottom: var(--size7);
-  width: fit-content;
 }
 
 .Image:nth-child(5n) {

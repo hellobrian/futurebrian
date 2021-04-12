@@ -28,14 +28,12 @@ function Gallery({ name }) {
     const data = await res.json();
     return data;
   }
-  const { data, status, error, refetch } = useQuery("images", getImages, {
-    refetchOnWindowFocus: false,
-    enabled: false,
-  });
+  const query = useQuery("images", getImages);
+  const { data, status, error, refetch } = query;
 
   useEffect(refetch, [refetch, name]);
 
-  if (status.error) {
+  if (!data || status.error) {
     console.log(error);
     return null;
   }
@@ -45,25 +43,27 @@ function Gallery({ name }) {
 
   return (
     <CloudinaryContext cloudName="brianhan">
-      <div className={styles.Gallery}>
-        {data.resources.map((img) => (
-          <a
-            key={img.public_id}
-            target="_blank"
-            rel="noreferrer"
-            href={`https://res.cloudinary.com/brianhan/image/upload/${img.public_id}.jpg`}
-          >
-            <Image publicId={img.public_id}>
-              <Transformation
-                crop="scale"
-                width="300"
-                height="200"
-                dpr="auto"
-                responsive_placeholder="blank"
-              />
-            </Image>
-          </a>
-        ))}
+      <div className={styles.GalleryWrapper}>
+        <div className={styles.Gallery}>
+          {data.resources.map((img) => (
+            <a
+              key={img.public_id}
+              target="_blank"
+              rel="noreferrer"
+              href={`https://res.cloudinary.com/brianhan/image/upload/${img.public_id}.jpg`}
+            >
+              <Image publicId={img.public_id}>
+                <Transformation
+                  crop="scale"
+                  width="300"
+                  height="200"
+                  dpr="auto"
+                  responsive_placeholder="blank"
+                />
+              </Image>
+            </a>
+          ))}
+        </div>
       </div>
     </CloudinaryContext>
   );
@@ -80,6 +80,7 @@ export function DetailPageLayout({ heroImage, name, blog, round, videos }) {
           alternativeText={heroImage.alternativeText}
         />
       )}
+      <Gallery name={name} />
       <h2 className="fs--9 fw--normal ta--center">{name}</h2>
 
       <ul
@@ -94,8 +95,6 @@ export function DetailPageLayout({ heroImage, name, blog, round, videos }) {
           <ReactMarkdown source={blog} />
         </div>
       )}
-
-      <Gallery name={name} />
 
       {videos.length > 0 && (
         <div className="mb--9">
