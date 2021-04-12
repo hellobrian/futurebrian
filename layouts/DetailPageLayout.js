@@ -28,12 +28,18 @@ function Gallery({ name }) {
     const data = await res.json();
     return data;
   }
-  const { data, status, error } = useQuery("images", getImages);
+  const { data, status, error, refetch } = useQuery("images", getImages, {
+    refetchOnWindowFocus: false,
+    enabled: false,
+  });
+
+  useEffect(refetch, [refetch, name]);
+
   if (status.error) {
     console.log(error);
     return null;
   }
-  if (status === "loading") {
+  if (status === "loading" || !data) {
     return <div>Loading...</div>;
   }
 
