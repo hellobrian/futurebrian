@@ -57,18 +57,23 @@
   }
 }
 
-.Gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 300px);
-  grid-gap: var(--size2);
+.GalleryWrapper {
+  overflow-x: auto;
+  width: 60%;
   margin: 0 auto;
-  margin-bottom: var(--size7);
 }
 
-.Image {
-  object-fit: cover;
-  width: 100%;
-  height: 200px;
+.GalleryWrapper::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.Gallery {
+  display: flex;
+  justify-content: center;
+  gap: var(--size2);
+  margin: 0 auto;
+  margin-bottom: var(--size7);
 }
 
 .Image:nth-child(5n) {

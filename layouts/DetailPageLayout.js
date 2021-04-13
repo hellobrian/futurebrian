@@ -1,5 +1,8 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
+import { useQuery } from "react-query";
+import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
+
 import styles from "./DetailPageLayout.module.css";
 import { YouTube } from "@/components/YouTube/YouTube";
 
@@ -10,59 +13,61 @@ function Tag({ children }) {
 }
 
 function MainImage({ imgUrl, alternativeText }) {
-  const image = useRef();
-  const [loaded, setLoaded] = useState(null);
-  const [opacity, setOpacity] = useState(0);
-
-  const handleLoad = useCallback(() => {
-    if (loaded === null && image.current && image.current.src === imgUrl) {
-      setLoaded(true);
-    }
-  }, [loaded, image, imgUrl]);
-
-  useEffect(() => {
-    if (
-      loaded === null &&
-      image.current &&
-      image.current.src === imgUrl &&
-      image.current.complete
-    ) {
-      setLoaded(true);
-    }
-  }, [loaded, image, imgUrl]);
-
-  useEffect(() => {
-    if (loaded == true) setOpacity(1);
-  }, [loaded]);
-
   return (
     <div className={styles.MainImage}>
-      <img
-        ref={image}
-        data-src={imgUrl}
-        src={imgUrl}
-        alt={alternativeText}
-        onLoad={handleLoad}
-        style={{
-          opacity,
-          transition: "opacity 200ms",
-        }}
-      />
+      <img data-src={imgUrl} src={imgUrl} alt={alternativeText} />
     </div>
   );
 }
 
-// function Gallery() {
-//   return (
-//     <div className={styles.Gallery}>
-//       <img
-//         className={styles.Image}
-//         src="/keyboards/photos/ava-yellow.jpg"
-//         alt="ava"
-//       />
-//     </div>
-//   );
-// }
+function Gallery({ name }) {
+  async function getImages() {
+    const res = await fetch(
+      `https://res.cloudinary.com/brianhan/image/list/${name}.json`
+    );
+    const data = await res.json();
+    return data;
+  }
+  const query = useQuery("images", getImages);
+  const { data, status, error, refetch } = query;
+
+  useEffect(refetch, [refetch, name]);
+
+  if (!data || status.error) {
+    console.log(error);
+    return null;
+  }
+  if (status === "loading" || !data) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <CloudinaryContext cloudName="brianhan">
+      <div className={styles.GalleryWrapper}>
+        <div className={styles.Gallery}>
+          {data.resources.map((img) => (
+            <a
+              key={img.public_id}
+              target="_blank"
+              rel="noreferrer"
+              href={`https://res.cloudinary.com/brianhan/image/upload/${img.public_id}.jpg`}
+            >
+              <Image publicId={img.public_id}>
+                <Transformation
+                  crop="scale"
+                  width="300"
+                  height="200"
+                  dpr="auto"
+                  responsive_placeholder="blank"
+                />
+              </Image>
+            </a>
+          ))}
+        </div>
+      </div>
+    </CloudinaryContext>
+  );
+}
 
 export function DetailPageLayout({ heroImage, name, blog, round, videos }) {
   const imgUrl = heroImage ? `${strapiUrl}${heroImage.url}` : null;
@@ -75,6 +80,7 @@ export function DetailPageLayout({ heroImage, name, blog, round, videos }) {
           alternativeText={heroImage.alternativeText}
         />
       )}
+      <Gallery name={name} />
       <h2 className="fs--9 fw--normal ta--center">{name}</h2>
 
       <ul
