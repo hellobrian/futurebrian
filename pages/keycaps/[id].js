@@ -28,10 +28,6 @@ export async function getStaticProps({ params }) {
         name
         blog
         round
-        hero_image {
-          url
-          alternativeText
-        }
         videos {
           id
           name
@@ -53,16 +49,10 @@ export async function getStaticProps({ params }) {
 
 export default function Keycap({
   data: {
-    keycap: { hero_image, name, blog, round, videos },
+    keycap: { name, blog, round, videos },
   },
 }) {
   return (
-    <DetailPageLayout
-      heroImage={hero_image}
-      name={name}
-      blog={blog}
-      round={round}
-      videos={videos}
-    />
+    <DetailPageLayout name={name} blog={blog} round={round} videos={videos} />
   );
 }

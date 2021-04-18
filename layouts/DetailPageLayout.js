@@ -64,7 +64,7 @@ function Gallery({ name }) {
   );
 }
 
-export function DetailPageLayout({ heroImage, name, blog, round, videos }) {
+export function DetailPageLayout({ name, blog, round, videos }) {
   return (
     <div className={styles.Container}>
       <h2 className="fs--9 fw--normal ta--center">{name}</h2>
