@@ -30,6 +30,7 @@ export function MenuComponent({ setMenuOpen }) {
       <CategoryList setMenuOpen={setMenuOpen} variant="keyboards" data={data} />
       <CategoryList setMenuOpen={setMenuOpen} variant="keycaps" data={data} />
       {/* <CategoryList setMenuOpen={setMenuOpen} variant="socials" /> */}
+      <CategoryList setMenuOpen={setMenuOpen} variant="other" />
     </>
   ) : null;
 }

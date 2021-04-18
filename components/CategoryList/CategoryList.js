@@ -65,6 +65,10 @@ export function CategoryList({ data, variant, setMenuOpen }) {
         />
       )}
 
+      {variant === "other" && (
+        <HeadingWrapper heading={"resources"} info={`links`} />
+      )}
+
       <List>
         {variant === "keyboards" &&
           data.keyboards.map((keyboard) => {
@@ -141,6 +145,20 @@ export function CategoryList({ data, variant, setMenuOpen }) {
               </a>
             </ListItem>
           </div>
+        )}
+        {variant === "other" && (
+          <ListItem variant={variant}>
+            <Link href={`/uses`}>
+              <a
+                className={`ff--bebas ${
+                  router.asPath === `/uses` && "fancy-link"
+                }`}
+                onClick={() => setMenuOpen(false)}
+              >
+                uses
+              </a>
+            </Link>
+          </ListItem>
         )}
       </List>
     </section>
