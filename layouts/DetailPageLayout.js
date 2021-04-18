@@ -6,18 +6,8 @@ import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import styles from "./DetailPageLayout.module.css";
 import { YouTube } from "@/components/YouTube/YouTube";
 
-const strapiUrl = process.env.NEXT_PUBLIC_PROD_URL;
-
 function Tag({ children }) {
   return <li className={styles.ListItem}>{children}</li>;
-}
-
-function MainImage({ imgUrl, alternativeText }) {
-  return (
-    <div className={styles.MainImage}>
-      <img data-src={imgUrl} src={imgUrl} alt={alternativeText} />
-    </div>
-  );
 }
 
 function Gallery({ name }) {
@@ -41,47 +31,44 @@ function Gallery({ name }) {
     return <div>Loading...</div>;
   }
 
+  const firstImage = data.resources.filter((_, i) => i === 0)[0];
+  const restImages = data.resources.filter((_, i) => i !== 0);
+
   return (
     <CloudinaryContext cloudName="brianhan">
-      <div className={styles.GalleryWrapper}>
-        <div className={styles.Gallery}>
-          {data.resources.map((img) => (
-            <a
-              key={img.public_id}
-              target="_blank"
-              rel="noreferrer"
-              href={`https://res.cloudinary.com/brianhan/image/upload/${img.public_id}.jpg`}
-            >
-              <Image publicId={img.public_id}>
-                <Transformation
-                  crop="scale"
-                  width="300"
-                  height="200"
-                  dpr="auto"
-                  responsive_placeholder="blank"
-                />
-              </Image>
-            </a>
-          ))}
-        </div>
+      <div className={styles.MainImage}>
+        <Image publicId={firstImage.public_id} key={firstImage.public_id}>
+          <Transformation
+            crop="scale"
+            width="808"
+            dpr="auto"
+            responsive_placeholder="blank"
+          />
+        </Image>
+      </div>
+      <div className={styles.Gallery}>
+        {restImages.map((img) => {
+          return (
+            <Image publicId={img.public_id} key={img.public_id}>
+              <Transformation
+                crop="scale"
+                width="300"
+                dpr="auto"
+                responsive_placeholder="blank"
+              />
+            </Image>
+          );
+        })}
       </div>
     </CloudinaryContext>
   );
 }
 
 export function DetailPageLayout({ heroImage, name, blog, round, videos }) {
-  const imgUrl = heroImage ? `${strapiUrl}${heroImage.url}` : null;
-
   return (
     <div className={styles.Container}>
-      {heroImage && (
-        <MainImage
-          imgUrl={imgUrl}
-          alternativeText={heroImage.alternativeText}
-        />
-      )}
-      <Gallery name={name} />
       <h2 className="fs--9 fw--normal ta--center">{name}</h2>
+      <Gallery name={name} />
 
       <ul
         className={`${styles.List} ta--center mb--7`}
