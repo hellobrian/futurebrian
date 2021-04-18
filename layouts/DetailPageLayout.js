@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useQuery } from "react-query";
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
@@ -11,17 +11,25 @@ function Tag({ children }) {
 }
 
 function Gallery({ name }) {
+  const [stateData, setData] = useState(null);
+  const [mainImage, setImage] = useState(null);
   async function getImages() {
     const res = await fetch(
       `https://res.cloudinary.com/brianhan/image/list/${name}.json`
     );
-    const data = await res.json();
-    return data;
+    const images = await res.json();
+    return images;
   }
   const query = useQuery("images", getImages);
   const { data, status, error, refetch } = query;
 
   useEffect(refetch, [refetch, name]);
+  useEffect(() => setData(data), [data]);
+  useEffect(() => {
+    if (!stateData) return;
+
+    setImage(stateData.resources[0].public_id);
+  }, [setImage, stateData]);
 
   if (!data || status.error) {
     console.log(error);
@@ -31,32 +39,46 @@ function Gallery({ name }) {
     return <div>Loading...</div>;
   }
 
-  const firstImage = data.resources.filter((_, i) => i === 0)[0];
-  const restImages = data.resources.filter((_, i) => i !== 0);
-
   return (
     <CloudinaryContext cloudName="brianhan">
       <div className={styles.MainImage}>
-        <Image publicId={firstImage.public_id} key={firstImage.public_id}>
+        <Image publicId={mainImage}>
           <Transformation
-            crop="scale"
-            width="808"
+            crop="fill"
+            height="800"
             dpr="auto"
             responsive_placeholder="blank"
           />
         </Image>
       </div>
       <div className={styles.Gallery}>
-        {restImages.map((img) => {
+        {data.resources.map((img) => {
           return (
-            <Image publicId={img.public_id} key={img.public_id}>
-              <Transformation
-                crop="scale"
-                width="300"
-                dpr="auto"
-                responsive_placeholder="blank"
-              />
-            </Image>
+            <button
+              type="button"
+              key={img.public_id}
+              onClick={() => setImage(img.public_id)}
+              style={
+                mainImage === img.public_id
+                  ? {
+                      background: "white",
+                      border: "4px solid white",
+                    }
+                  : {
+                      background: "transparent",
+                      border: "4px solid transparent",
+                    }
+              }
+            >
+              <Image publicId={img.public_id}>
+                <Transformation
+                  crop="scale"
+                  width="300"
+                  dpr="auto"
+                  responsive_placeholder="blank"
+                />
+              </Image>
+            </button>
           );
         })}
       </div>
@@ -68,14 +90,13 @@ export function DetailPageLayout({ name, blog, round, videos }) {
   return (
     <div className={styles.Container}>
       <h2 className="fs--9 fw--normal ta--center">{name}</h2>
-      <Gallery name={name} />
-
       <ul
         className={`${styles.List} ta--center mb--7`}
         style={{ width: "100%" }}
       >
-        {round && <Tag>Round {round}</Tag>}
+        {round ? <Tag>Round {round}</Tag> : null}
       </ul>
+      <Gallery name={name} />
 
       {blog && (
         <div className={`${styles.Post}`}>
