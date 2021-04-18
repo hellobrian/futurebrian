@@ -41,6 +41,7 @@ export function PageLayout({ children }) {
         {breakpoint !== "desktop" && (
           <Navbar
             toggleMenu={() => setMenuOpen(!isMenuOpen)}
+            closeMenu={() => setMenuOpen(false)}
             isMenuOpen={isMenuOpen}
             variant={breakpoint}
           />

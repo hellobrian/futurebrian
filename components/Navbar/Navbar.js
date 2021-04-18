@@ -5,7 +5,12 @@ import Link from "next/link";
 import { IconMenu, IconClose } from "@/components/Icons/Icons";
 import styles from "./Navbar.module.css";
 
-export function Navbar({ toggleMenu, isMenuOpen, variant = "mobile" }) {
+export function Navbar({
+  toggleMenu,
+  closeMenu,
+  isMenuOpen,
+  variant = "mobile",
+}) {
   return (
     <header data-variant={variant} className={`${styles.Navbar}`}>
       <nav>
@@ -33,7 +38,11 @@ export function Navbar({ toggleMenu, isMenuOpen, variant = "mobile" }) {
 
         <h1 className={styles.Heading}>
           <Link href="/">
-            <a className="ff--bebas fancy-link" title="click here to go home">
+            <a
+              className="ff--bebas fancy-link"
+              title="click here to go home"
+              onClick={closeMenu}
+            >
               futurebrian
             </a>
           </Link>
@@ -48,6 +57,7 @@ export function Navbar({ toggleMenu, isMenuOpen, variant = "mobile" }) {
 
 Navbar.propTypes = {
   toggleMenu: PropTypes.func.isRequired,
+  closeMenu: PropTypes.func.isRequired,
   isMenuOpen: PropTypes.bool.isRequired,
   variant: PropTypes.oneOf(["mobile", "tablet", "desktop"]),
 };

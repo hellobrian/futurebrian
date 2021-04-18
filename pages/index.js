@@ -29,7 +29,7 @@ export default function Home({ data }) {
   const { videos } = data;
 
   const latestVideo = videos[0];
-  console.log({ latestVideo });
+
   return (
     <div className={styles.Container}>
       <div className={styles.LinkTree}>
