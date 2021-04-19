@@ -1,24 +1,42 @@
+@keyframes loading {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(5) rotate(360deg);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.Loading {
+  animation-name: loading;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-direction: alternate;
+}
 .Container {
   display: grid;
   grid-template-columns: 1fr 1fr min(65ch, 100%) 1fr 1fr;
 }
 
-.Container > * {
-  grid-column: 3;
+.Container img {
+  max-width: 100%;
 }
 
-/* .Full {
-  width: 100%;
-  grid-column: 1/6;
-} */
-
-.MainImage {
-  grid-column: 2/5;
-  background-color: var(--primaryBackgroundColor);
-  border: 24px solid var(--primaryBackgroundColor);
-  transition: height 200ms;
-  overflow: hidden;
-  min-height: unset;
+.Container > * {
+  grid-column: 3;
 }
 
 @media screen and (min-width: 1200px) {
@@ -29,51 +47,28 @@
   .Container > * {
     grid-column: 1;
   }
-
-  .MainImage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow);
-    min-height: 500px;
-  }
 }
 
-.MainImage > img {
-  object-fit: cover;
-  max-width: 100%;
-  height: auto;
+.MainImage {
+  display: flex;
+  justify-content: center;
 }
 
-.MainImage > img[data-src]::before {
-  content: "";
-  display: block;
-  padding-top: 56.25%;
-}
-
-@media screen and (min-width: 768px) {
-  .MainImage {
-    margin: var(--navbarHeight) 0;
-  }
-}
-
-.GalleryWrapper {
-  overflow-x: auto;
-  width: 60%;
-  margin: 0 auto;
-}
-
-.GalleryWrapper::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+.MainImage img {
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-timing-function: linear;
 }
 
 .Gallery {
-  display: flex;
-  justify-content: center;
-  gap: var(--size2);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 8px;
+  justify-items: center;
+  align-items: center;
+  max-width: 808px;
   margin: 0 auto;
-  margin-bottom: var(--size7);
+  margin-top: 24px;
 }
 
 .Image:nth-child(5n) {
@@ -144,5 +139,8 @@
 
 .Videos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 400px;
+  margin: 0 auto;
+  grid-template-columns: repeat(1, 1fr);
 }
