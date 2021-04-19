@@ -116,7 +116,7 @@ function Gallery({ name }) {
         ) : (
           <Image publicId={mainImage}>
             <Transformation
-              crop="fill"
+              crop="scale"
               height="800"
               dpr="auto"
               responsive_placeholder="blank"
