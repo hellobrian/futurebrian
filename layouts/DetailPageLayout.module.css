@@ -1,3 +1,31 @@
+@keyframes loading {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(5) rotate(360deg);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.Loading {
+  animation-name: loading;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-direction: alternate;
+}
 .Container {
   display: grid;
   grid-template-columns: 1fr 1fr min(65ch, 100%) 1fr 1fr;
@@ -24,6 +52,12 @@
 .MainImage {
   display: flex;
   justify-content: center;
+}
+
+.MainImage img {
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-timing-function: linear;
 }
 
 .Gallery {

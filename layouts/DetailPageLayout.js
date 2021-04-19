@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useQuery } from "react-query";
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
+import Skeleton from "react-loading-skeleton";
 
 import styles from "./DetailPageLayout.module.css";
 import { YouTube } from "@/components/YouTube/YouTube";
@@ -10,7 +11,69 @@ function Tag({ children }) {
   return <li className={styles.ListItem}>{children}</li>;
 }
 
+function Loading() {
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: 800,
+        height: 800,
+      }}
+    >
+      <svg
+        className={styles.Loading}
+        style={{ width: 48, height: 48 }}
+        viewBox="0 0 300 100"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="white"
+      >
+        <circle cx="50" cy="50" r="50" />
+      </svg>
+    </div>
+  );
+}
+
+function Thumbnail({ setImage, setSkeleton, img, mainImage }) {
+  const [clicked, setClicked] = useState(false);
+  return (
+    <button
+      type="button"
+      key={img.public_id}
+      onClick={() => {
+        setImage(img.public_id);
+        if (!clicked) {
+          setSkeleton(true);
+          setClicked(true);
+        }
+      }}
+      style={
+        mainImage === img.public_id
+          ? {
+              background: "white",
+              border: "4px solid white",
+            }
+          : {
+              background: "transparent",
+              border: "4px solid transparent",
+            }
+      }
+    >
+      <Image publicId={img.public_id}>
+        <Transformation
+          crop="scale"
+          width="300"
+          dpr="auto"
+          responsive_placeholder="blank"
+        />
+      </Image>
+    </button>
+  );
+}
+
 function Gallery({ name }) {
+  const [skeleton, setSkeleton] = useState(false);
   const [stateData, setData] = useState(null);
   const [mainImage, setImage] = useState(null);
   async function getImages() {
@@ -31,54 +94,46 @@ function Gallery({ name }) {
     setImage(stateData.resources[0].public_id);
   }, [setImage, stateData]);
 
+  useEffect(() => {
+    if (!skeleton) return;
+
+    setTimeout(() => setSkeleton(false), 2000);
+  }, [skeleton]);
+
   if (!data || status.error) {
     console.log(error);
     return null;
   }
   if (status === "loading" || !data) {
-    return <div>Loading...</div>;
+    return <Skeleton height={800} />;
   }
 
   return (
     <CloudinaryContext cloudName="brianhan">
       <div className={styles.MainImage}>
-        <Image publicId={mainImage}>
-          <Transformation
-            crop="fill"
-            height="800"
-            dpr="auto"
-            responsive_placeholder="blank"
-          />
-        </Image>
+        {skeleton ? (
+          <Loading />
+        ) : (
+          <Image publicId={mainImage}>
+            <Transformation
+              crop="fill"
+              height="800"
+              dpr="auto"
+              responsive_placeholder="blank"
+            />
+          </Image>
+        )}
       </div>
       <div className={styles.Gallery}>
         {data.resources.map((img) => {
           return (
-            <button
-              type="button"
+            <Thumbnail
               key={img.public_id}
-              onClick={() => setImage(img.public_id)}
-              style={
-                mainImage === img.public_id
-                  ? {
-                      background: "white",
-                      border: "4px solid white",
-                    }
-                  : {
-                      background: "transparent",
-                      border: "4px solid transparent",
-                    }
-              }
-            >
-              <Image publicId={img.public_id}>
-                <Transformation
-                  crop="scale"
-                  width="300"
-                  dpr="auto"
-                  responsive_placeholder="blank"
-                />
-              </Image>
-            </button>
+              setImage={setImage}
+              setSkeleton={setSkeleton}
+              img={img}
+              mainImage={mainImage}
+            />
           );
         })}
       </div>
