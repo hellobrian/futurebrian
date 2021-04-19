@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useQuery } from "react-query";
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
-import Skeleton from "react-loading-skeleton";
 
 import styles from "./DetailPageLayout.module.css";
 import { YouTube } from "@/components/YouTube/YouTube";
@@ -62,8 +61,9 @@ function Thumbnail({ setImage, setSkeleton, img, mainImage }) {
     >
       <Image publicId={img.public_id}>
         <Transformation
-          crop="scale"
+          crop="fill"
           width="300"
+          height="300"
           dpr="auto"
           responsive_placeholder="blank"
         />
@@ -105,7 +105,7 @@ function Gallery({ name }) {
     return null;
   }
   if (status === "loading" || !data) {
-    return <Skeleton height={800} />;
+    return <Loading />;
   }
 
   return (
@@ -116,7 +116,7 @@ function Gallery({ name }) {
         ) : (
           <Image publicId={mainImage}>
             <Transformation
-              crop="scale"
+              crop="fill"
               height="800"
               dpr="auto"
               responsive_placeholder="blank"

@@ -31,10 +31,6 @@
   grid-template-columns: 1fr 1fr min(65ch, 100%) 1fr 1fr;
 }
 
-.Container img {
-  max-width: 100%;
-}
-
 .Container > * {
   grid-column: 3;
 }
@@ -62,13 +58,12 @@
 
 .Gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 8px;
   justify-items: center;
   align-items: center;
-  max-width: 808px;
-  margin: 0 auto;
-  margin-top: 24px;
+  max-width: 948px;
+  margin: 48px auto;
 }
 
 .Image:nth-child(5n) {
