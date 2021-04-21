@@ -1,26 +1,33 @@
 .Nav {
-  /* background: red; */
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
-  height: 64px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 60px;
+  padding: 8px 60px;
+  margin-bottom: 64px;
+  height: 64px;
+}
+
+@media screen and (max-width: 750px) {
+  .Nav {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .Nav ul {
-  /* background: blue; */
-
   display: flex;
   gap: 24px;
 }
 
 .Nav a {
   font-size: 18px;
-  padding-bottom: 6px;
+  padding: 4px 8px;
+  border-radius: 8px;
 }
 
-.Nav .IsActive {
-  border-bottom: 4px solid transparent;
+.Nav a:hover {
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 200ms ease-in-out;
 }

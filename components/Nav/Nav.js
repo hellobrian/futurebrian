@@ -5,22 +5,23 @@ import { useRouter } from "next/router";
 import styles from "./Nav.module.css";
 
 const LINKS = [
-  { href: "/keyboards", text: "Keyboards", borderColor: "var(--red)" },
-  { href: "/keycaps", text: "Keycaps", borderColor: "var(--purple)" },
-  { href: "/uses", text: "Uses", borderColor: "var(--blue)" },
-  { href: "/socials", text: "Socials", borderColor: "var(--white)" },
+  { href: "/keyboards", text: "Keyboards", color: "var(--red)" },
+  { href: "/keycaps", text: "Keycaps", color: "var(--red)" },
+  { href: "/uses", text: "Uses", color: "var(--purple)" },
+  { href: "/socials", text: "Socials", color: "var(--blue)" },
 ];
 
-function NavLink({ href, children }) {
+function NavLink({ href, children, color }) {
   const router = useRouter();
 
-  let className = children.props.className || "";
+  const style =
+    router.pathname === href
+      ? {
+          background: color,
+        }
+      : {};
 
-  if (router.pathname === href) {
-    className = `${className} ${styles.IsActive}`.trim();
-  }
-
-  return <Link href={href}>{cloneElement(children, { className })}</Link>;
+  return <Link href={href}>{cloneElement(children, { style })}</Link>;
 }
 
 export function Nav() {
@@ -34,8 +35,8 @@ export function Nav() {
       <ul>
         {LINKS.map((link) => (
           <li key={link.text}>
-            <NavLink href={link.href}>
-              <a style={{ borderColor: link.borderColor }}>{link.text}</a>
+            <NavLink href={link.href} color={link.color}>
+              <a>{link.text}</a>
             </NavLink>
           </li>
         ))}
