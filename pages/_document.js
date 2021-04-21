@@ -24,6 +24,8 @@ class MyDocument extends Document {
         <Head>
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href={fonts} rel="stylesheet" />
+          <title>futurebrian</title>
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />

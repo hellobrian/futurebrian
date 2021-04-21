@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Head from "next/head";
 import { useMedia } from "use-media";
 
 import { Navbar } from "@/components/Navbar/Navbar";
@@ -32,11 +31,6 @@ export function PageLayout({ children }) {
 
   return (
     <>
-      <Head>
-        <title>futurebrian</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className={styles.Main}>
         {breakpoint !== "desktop" && (
           <Navbar
