@@ -1,0 +1,26 @@
+.Nav {
+  /* background: red; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+}
+
+.Nav ul {
+  /* background: blue; */
+
+  display: flex;
+  gap: 24px;
+}
+
+.Nav a {
+  font-size: 18px;
+  padding-bottom: 6px;
+}
+
+.Nav .IsActive {
+  border-bottom: 4px solid transparent;
+}

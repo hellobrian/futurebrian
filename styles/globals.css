@@ -64,7 +64,10 @@ h1,
 h2,
 h3 {
   font-family: var(--bebas);
-  line-height: 1.75;
+  /* line-height: 1.75; */
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 
 p {
