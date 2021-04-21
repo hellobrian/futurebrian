@@ -198,19 +198,3 @@ button {
   border-right-width: 0;
   border-left-width: 0;
 }
-
-.react-toggle-track {
-  background-color: #ca106d !important;
-}
-
-.react-toggle-thumb {
-  border-color: #ca106d !important;
-}
-
-.react-toggle--checked .react-toggle-track {
-  background-color: #4834d4 !important;
-}
-
-.react-toggle--checked .react-toggle-thumb {
-  border-color: #4834d4 !important;
-}
