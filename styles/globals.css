@@ -1,6 +1,5 @@
 :root {
   --bebas: "Bebas Neue", cursive;
-  --vollkorn: "Vollkorn", serif;
   --roboto: "Roboto", sans-serif;
   --size1: 4px;
   --size2: 8px;
@@ -89,10 +88,6 @@ button {
 /* font-family */
 .ff--bebas {
   font-family: var(--bebas);
-}
-
-.ff--vollkorn {
-  font-family: var(--vollkorn);
 }
 
 .ff--roboto {

@@ -3,7 +3,6 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 function getFonts() {
   const baseUrl = `https://fonts.googleapis.com/css2`;
   const FONTS = {
-    vollkorn: `family=Vollkorn:ital,wght@0,800;1,800`,
     bebas: `family=Bebas+Neue`,
     roboto: `family=Roboto`,
   };
