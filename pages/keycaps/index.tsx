@@ -36,7 +36,7 @@ export default function Keycaps(props: KeycapsProps): JSX.Element {
   const { keycaps } = props;
   return (
     <PageLayout className={styles.Keycaps}>
-      <div className={styles.PageTitle}>
+      <div className={'page-title'}>
         <h2>Keycaps</h2>
       </div>
       <GridGallery images={keycaps} variant={GridGalleryVariant.Keycaps} />

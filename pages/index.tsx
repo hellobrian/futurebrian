@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <PageLayout>
       <div>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet iusto
-      praesentium beatae placeat. Quia totam modi cumque quisquam asperiores,
-      dolorum vitae optio facere, eaque maiores laboriosam perspiciatis? Earum,
-      unde vitae?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet iusto
+        praesentium beatae placeat. Quia totam modi cumque quisquam asperiores,
+        dolorum vitae optio facere, eaque maiores laboriosam perspiciatis? Earum,
+        unde vitae?
       </div>
     </PageLayout>
   );

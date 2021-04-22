@@ -36,7 +36,7 @@ export default function Keyboards(props: KeyboardsProps): JSX.Element {
 
   return (
     <PageLayout className={styles.Keyboards}>
-      <div className={styles.PageTitle}>
+      <div className={'page-title'}>
         <h2>Keyboards</h2>
       </div>
       <GridGallery images={keyboards} variant={GridGalleryVariant.Keyboards} />
