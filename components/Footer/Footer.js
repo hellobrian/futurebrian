@@ -1,20 +1,36 @@
+import { useMedia } from "use-media";
 import {
   IconYoutube,
   IconInstagram,
   IconTwitch,
-  IconReddit,
 } from "@/components/Icons/Icons";
 
 import styles from "./Footer.module.css";
 
 const YOUTUBE = "https://www.youtube.com/channel/UCQGq3OYhoZJrlRaemSCe6Zg";
 const INSTAGRAM = "https://www.instagram.com/futurebrian_/";
-const REDDIT = "https://www.reddit.com/user/futurebrian";
 const TWITCH = "https://www.twitch.tv/futurebrian";
 
 export function Footer() {
+  const isMobile = useMedia({ maxWidth: 750 });
   return (
-    <footer data-name="Footer" className={styles.Footer}>
+    <footer
+      data-name="Footer"
+      className={styles.Footer}
+      style={
+        isMobile
+          ? {
+              backgroundColor: "black",
+              width: "fit-content",
+              left: "50%",
+              bottom: 8,
+              transform: "translateX(-50%)",
+              borderRadius: 20,
+              height: 44,
+            }
+          : {}
+      }
+    >
       <a href={INSTAGRAM} aria-label="instagram profile for futurebrian">
         <IconInstagram />
       </a>
@@ -23,9 +39,6 @@ export function Footer() {
       </a>
       <a href={TWITCH} aria-label="twitch channel for futurebrian">
         <IconTwitch />
-      </a>
-      <a href={REDDIT} aria-label="reddit profile for futurebrian">
-        <IconReddit />
       </a>
     </footer>
   );

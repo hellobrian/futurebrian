@@ -49,7 +49,7 @@ function GridImage({ name }) {
           transition: "opacity 200ms ease-in-out",
         }}
       >
-        <Transformation width={isMobile ? "300" : "600"} crop="scale" />
+        <Transformation width={isMobile ? "400" : "600"} crop="scale" />
       </Image>
 
       <span
