@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { request, gql } from "graphql-request";
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
+import { useMedia } from "use-media";
 
 import { PageLayout } from "@/components/PageLayout/PageLayout";
 import styles from "@/styles/Keyboards.module.css";
@@ -26,6 +27,7 @@ export async function getStaticProps() {
 
 function GridImage({ name }) {
   const [isHover, setHover] = useState(false);
+  const isMobile = useMedia({ maxWidth: 750 });
 
   const on = () => setHover(true);
   const off = () => setHover(false);
@@ -47,8 +49,9 @@ function GridImage({ name }) {
           transition: "opacity 200ms ease-in-out",
         }}
       >
-        <Transformation width="600" crop="scale" />
+        <Transformation width={isMobile ? "300" : "600"} crop="scale" />
       </Image>
+
       <span
         className={styles.KeyboardName}
         onMouseEnter={on}

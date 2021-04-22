@@ -17,6 +17,19 @@
   justify-items: center;
 }
 
+@media screen and (max-width: 750px) {
+  .Keyboards .Title {
+    height: 10vh;
+  }
+  .Keyboards .Title > h2 {
+    font-size: 32px;
+  }
+
+  .Keyboards .Grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
 .Keyboards .Grid > .GridItem {
   position: relative;
 }
