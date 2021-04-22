@@ -22,6 +22,10 @@ class MyDocument extends Document {
     return (
       <Html lang="en" className="dark">
         <Head>
+          <meta
+            name="description"
+            content="This is a space for Futurebrian to show off photos, videos and thoughts about his keyboard collection."
+          />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href={fonts} rel="stylesheet" />
           <link rel="icon" href="/favicon.ico" />
