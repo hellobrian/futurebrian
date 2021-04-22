@@ -4,6 +4,8 @@ import { useMedia } from "use-media";
 
 import styles from "./GridGallery.module.css";
 
+const transition = "opacity 200ms ease-in-out";
+
 function GridImage({ name, publicId }) {
   const isMobile = useMedia({ maxWidth: 750 });
   const [isHover, setHover] = useState(false);
@@ -16,20 +18,32 @@ function GridImage({ name, publicId }) {
       <Image
         publicId={publicId}
         alt={`picture of a ${name} keyboard`}
-        style={{
-          opacity: isHover ? 0.5 : 1,
-          transition: "opacity 200ms ease-in-out",
-        }}
+        style={
+          !isMobile
+            ? {
+                opacity: isHover ? 0.5 : 1,
+                transition,
+              }
+            : {
+                opacity: 0.5,
+              }
+        }
       >
         <Transformation width={isMobile ? "400" : "600"} crop="scale" />
       </Image>
 
       <span
         className={styles.GridImageName}
-        style={{
-          opacity: isHover ? 1 : 0,
-          transition: "opacity 200ms ease-in-out",
-        }}
+        style={
+          !isMobile
+            ? {
+                opacity: isHover ? 1 : 0,
+                transition,
+              }
+            : {
+                opacity: 1,
+              }
+        }
       >
         {name}
       </span>
