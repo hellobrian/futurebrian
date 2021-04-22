@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { request, gql } from "graphql-request";
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import { useMedia } from "use-media";
@@ -14,6 +13,7 @@ export async function getStaticProps() {
       keyboards {
         name
         id
+        thumbnail_public_id
       }
     }
   `;
@@ -25,39 +25,23 @@ export async function getStaticProps() {
   };
 }
 
-function GridImage({ name }) {
-  const [isHover, setHover] = useState(false);
+function GridImage({ name, publicId }) {
   const isMobile = useMedia({ maxWidth: 750 });
-
-  const on = () => setHover(true);
-  const off = () => setHover(false);
 
   return (
     <div
       className={styles.GridItem}
       style={{
-        background: "white",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <Image
-        publicId="futurebrian/bella/pbt%20notion/IMG_4296_d1quyo.webp"
-        style={{
-          opacity: isHover ? 0.9 : 1,
-          transition: "opacity 200ms ease-in-out",
-        }}
-        alt={`picture of a ${name} keyboard`}
-      >
+      <Image publicId={publicId} alt={`picture of a ${name} keyboard`}>
         <Transformation width={isMobile ? "400" : "600"} crop="scale" />
       </Image>
 
-      <span
-        className={styles.KeyboardName}
-        onMouseEnter={on}
-        onMouseLeave={off}
-      >
+      <span className={styles.KeyboardName}>
         <p>{name}</p>
       </span>
     </div>
@@ -66,18 +50,22 @@ function GridImage({ name }) {
 
 export default function Keyboards({ data }) {
   return (
-    <PageLayout className={styles.Keyboards}>
-      <div className={styles.Title}>
-        <h2>Keyboards</h2>
-      </div>
+    <CloudinaryContext cloudName="brianhan">
+      <PageLayout className={styles.Keyboards}>
+        <div className={styles.Title}>
+          <h2>Keyboards</h2>
+        </div>
 
-      <CloudinaryContext cloudName="brianhan">
         <div className={styles.Grid}>
           {data.keyboards.map((keyboard) => (
-            <GridImage name={keyboard.name} key={keyboard.id} />
+            <GridImage
+              name={keyboard.name}
+              key={keyboard.id}
+              publicId={keyboard.thumbnail_public_id}
+            />
           ))}
         </div>
-      </CloudinaryContext>
-    </PageLayout>
+      </PageLayout>
+    </CloudinaryContext>
   );
 }

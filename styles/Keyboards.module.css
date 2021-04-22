@@ -42,19 +42,20 @@
   position: relative;
 }
 
-.GridItem img {
-  opacity: 0.9;
-}
-
 .KeyboardName {
   position: absolute;
   display: inline-flex;
   align-items: center;
-  top: 16px;
-  right: 16px;
+  top: 12px;
+  right: 12px;
   border-radius: 8px;
   background: var(--black);
   padding: 0 16px;
+  transition: background-color 200ms ease-in-out;
+}
+
+.KeyboardName:hover {
+  background-color: var(--red);
 }
 
 .KeyboardName p {
