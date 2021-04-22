@@ -48,6 +48,7 @@ function GridImage({ name }) {
           opacity: isHover ? 0.9 : 1,
           transition: "opacity 200ms ease-in-out",
         }}
+        alt={`picture of a ${name} keyboard`}
       >
         <Transformation width={isMobile ? "400" : "600"} crop="scale" />
       </Image>
