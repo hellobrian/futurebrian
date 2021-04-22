@@ -27,7 +27,7 @@
   padding: 0 16px;
   font-family: var(--bebas);
   font-size: 52px;
-  color: var(--yellow);
+  color: var(--white);
 }
 
 @media screen and (max-width: 1815px) {
