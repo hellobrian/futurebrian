@@ -4,7 +4,13 @@ import { Footer } from "@/components/Footer/Footer";
 
 import styles from "@/styles/Home.module.css";
 
-export function PageLayout({ className = "", children }) {
+interface PageLayoutProps {
+  className?: string;
+  children: React.ReactNode
+}
+
+export function PageLayout(props: PageLayoutProps): JSX.Element {
+  const { className = "", children } = props;
   return (
     <>
       <Head>

@@ -1,8 +1,9 @@
 import { request, gql } from "graphql-request";
+import { GetStaticProps, GetStaticPaths } from 'next'
 
 const endpoint = process.env.PROD_GRAPHQL_ENDPOINT;
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const query = gql`
     query {
       keycaps {
@@ -19,7 +20,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const query = gql`
     query getKeycap($id: ID!) {
       keycap(id: $id) {
@@ -40,12 +41,14 @@ export async function getStaticProps({ params }) {
     id: params.id,
   };
   const data = await request(endpoint, query, variables);
+  const { keycap } = data;
+
   return {
-    props: { data },
+    props: { keycap },
     revalidate: 1,
   };
 }
 
-export default function Keycap({ data }) {
-  return <pre>{JSON.stringify(data, null, 2)}</pre>;
+export default function Keycap({ keycap }): JSX.Element {
+  return <pre>{JSON.stringify(keycap, null, 2)}</pre>;
 }

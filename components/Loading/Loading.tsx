@@ -1,6 +1,6 @@
 import styles from "./Loading.module.css";
 
-export function Loading() {
+export function Loading(): JSX.Element {
   return (
     <div
       style={{

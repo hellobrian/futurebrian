@@ -4,14 +4,28 @@ import { useRouter } from "next/router";
 
 import styles from "./Nav.module.css";
 
+enum LinkColor {
+  Red = "var(--red)",
+  Purple = "var(--purple)",
+  Blue = "var(--blue)"
+}
+
+interface NavLinkProps {
+  href: string,
+  children: JSX.Element,
+  color: LinkColor
+}
+
 const LINKS = [
-  { href: "/keyboards", text: "Keyboards", color: "var(--red)" },
-  { href: "/keycaps", text: "Keycaps", color: "var(--red)" },
-  { href: "/uses", text: "Uses", color: "var(--purple)" },
-  { href: "/socials", text: "Socials", color: "var(--blue)" },
+  { href: "/keyboards", text: "Keyboards", color: LinkColor.Red },
+  { href: "/keycaps", text: "Keycaps", color: LinkColor.Red },
+  { href: "/uses", text: "Uses", color: LinkColor.Purple },
+  { href: "/socials", text: "Socials", color: LinkColor.Blue },
 ];
 
-function NavLink({ href, children, color }) {
+
+function NavLink(props: NavLinkProps): JSX.Element {
+  const { href, children, color } = props
   const router = useRouter();
 
   const style =
@@ -24,7 +38,7 @@ function NavLink({ href, children, color }) {
   return <Link href={href}>{cloneElement(children, { style })}</Link>;
 }
 
-export function Nav() {
+export function Nav(): JSX.Element {
   return (
     <header className={styles.Nav} data-name="Nav">
       <Link href="/">

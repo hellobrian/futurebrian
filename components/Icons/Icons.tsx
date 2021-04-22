@@ -1,4 +1,4 @@
-export const IconYoutube = ({ ...props }) => (
+export const IconYoutube = ({ ...props }): JSX.Element => (
   <svg
     {...props}
     fill="var(--primaryTextColor)"
@@ -11,7 +11,7 @@ export const IconYoutube = ({ ...props }) => (
   </svg>
 );
 
-export const IconClose = ({ ...props }) => (
+export const IconClose = ({ ...props }): JSX.Element => (
   <svg
     {...props}
     fill="var(--primaryTextColor)"
@@ -24,7 +24,7 @@ export const IconClose = ({ ...props }) => (
   </svg>
 );
 
-export const IconInstagram = ({ ...props }) => (
+export const IconInstagram = ({ ...props }): JSX.Element => (
   <svg
     {...props}
     fill="var(--primaryTextColor)"
@@ -38,7 +38,7 @@ export const IconInstagram = ({ ...props }) => (
   </svg>
 );
 
-export const IconMenu = ({ ...props }) => (
+export const IconMenu = ({ ...props }): JSX.Element => (
   <svg
     {...props}
     fill="var(--primaryTextColor)"
@@ -51,7 +51,7 @@ export const IconMenu = ({ ...props }) => (
   </svg>
 );
 
-export const IconReddit = ({ ...props }) => (
+export const IconReddit = ({ ...props }): JSX.Element => (
   <svg
     {...props}
     fill="var(--primaryTextColor)"
@@ -64,7 +64,7 @@ export const IconReddit = ({ ...props }) => (
   </svg>
 );
 
-export function IconMoon({ ...props }) {
+export function IconMoon({ ...props }): JSX.Element {
   return (
     <svg
       fill="var(--primaryTextColor)"
@@ -79,7 +79,7 @@ export function IconMoon({ ...props }) {
   );
 }
 
-export function IconSun({ ...props }) {
+export function IconSun({ ...props }): JSX.Element {
   return (
     <svg
       fill="var(--primaryTextColor)"
@@ -94,7 +94,7 @@ export function IconSun({ ...props }) {
   );
 }
 
-export function IconTwitch({ ...props }) {
+export function IconTwitch({ ...props }): JSX.Element {
   return (
     <svg
       version="1.1"

@@ -7,11 +7,13 @@ import {
 
 import styles from "./Footer.module.css";
 
-const YOUTUBE = "https://www.youtube.com/channel/UCQGq3OYhoZJrlRaemSCe6Zg";
-const INSTAGRAM = "https://www.instagram.com/futurebrian_/";
-const TWITCH = "https://www.twitch.tv/futurebrian";
+enum Links {
+  YouTube = "https://www.youtube.com/channel/UCQGq3OYhoZJrlRaemSCe6Zg",
+  Instagram =  "https://www.instagram.com/futurebrian_/",
+  Twitch =  "https://www.twitch.tv/futurebrian"
+}
 
-export function Footer() {
+export function Footer(): JSX.Element {
   const isMobile = useMedia({ maxWidth: 750 });
   return (
     <footer
@@ -31,13 +33,13 @@ export function Footer() {
           : {}
       }
     >
-      <a href={INSTAGRAM} aria-label="instagram profile for futurebrian">
+      <a href={Links.Instagram} aria-label="instagram profile for futurebrian">
         <IconInstagram />
       </a>
-      <a href={YOUTUBE} aria-label="youtube channel for futurebrian">
+      <a href={Links.YouTube} aria-label="youtube channel for futurebrian">
         <IconYoutube />
       </a>
-      <a href={TWITCH} aria-label="twitch channel for futurebrian">
+      <a href={Links.Twitch} aria-label="twitch channel for futurebrian">
         <IconTwitch />
       </a>
     </footer>

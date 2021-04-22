@@ -1,12 +1,15 @@
 import { request, gql } from "graphql-request";
+import { GetStaticProps } from 'next'
 
 import { PageLayout } from "@/components/PageLayout/PageLayout";
 import { GridGallery } from "@/components/GridGallery/GridGallery";
 import styles from "@/styles/Keyboards.module.css";
+import { GridGalleryVariant, Keycap } from '@/utils/types'
+
 
 const ENDPOINT = process.env.PROD_GRAPHQL_ENDPOINT;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const query = gql`
     query {
       keycaps {
@@ -18,19 +21,25 @@ export async function getStaticProps() {
   `;
 
   const data = await request(ENDPOINT, query);
+  const { keycaps } = data;
   return {
-    props: { data },
+    props: { keycaps },
     revalidate: 1,
   };
 }
 
-export default function Keycaps({ data }) {
+interface KeycapsProps {
+  keycaps: [Keycap]
+}
+
+export default function Keycaps(props: KeycapsProps): JSX.Element {
+  const { keycaps } = props;
   return (
-    <PageLayout className={styles.Keyboards}>
+    <PageLayout className={styles.Keycaps}>
       <div className={styles.PageTitle}>
         <h2>Keycaps</h2>
       </div>
-      <GridGallery images={data.keycaps} variant="keycaps" />
+      <GridGallery images={keycaps} variant={GridGalleryVariant.Keycaps} />
     </PageLayout>
   );
 }
