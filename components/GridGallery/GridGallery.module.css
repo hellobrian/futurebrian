@@ -23,10 +23,6 @@
   transition: background-color 200ms ease-in-out;
 }
 
-.GridImageName:hover {
-  background-color: var(--red);
-}
-
 .GridImageName p {
   font-family: var(--bebas);
   font-size: 36px;

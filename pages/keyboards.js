@@ -30,7 +30,7 @@ export default function Keyboards({ data }) {
       <div className={styles.PageTitle}>
         <h2>Keyboards</h2>
       </div>
-      <GridGallery images={data.keyboards} />
+      <GridGallery images={data.keyboards} color={"var(--red)"} />
     </PageLayout>
   );
 }
