@@ -15,11 +15,19 @@
   gap: 8px;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
   justify-items: center;
+  max-width: 1820px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1815px) {
+  .Keyboards .Grid {
+    max-width: 1213px;
+  }
 }
 
 @media screen and (max-width: 750px) {
   .Keyboards .Title {
-    height: 10vh;
+    height: 20vh;
   }
   .Keyboards .Title > h2 {
     font-size: 32px;
