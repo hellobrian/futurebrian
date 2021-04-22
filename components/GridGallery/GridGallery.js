@@ -4,7 +4,7 @@ import { useMedia } from "use-media";
 
 import styles from "./GridGallery.module.css";
 
-function GridImage({ name, publicId, color }) {
+function GridImage({ name, publicId }) {
   const isMobile = useMedia({ maxWidth: 750 });
   const [isHover, setHover] = useState(false);
 
@@ -12,31 +12,32 @@ function GridImage({ name, publicId, color }) {
   const off = () => setHover(false);
 
   return (
-    <div
-      onMouseEnter={on}
-      onMouseLeave={off}
-      className={styles.GridImage}
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Image publicId={publicId} alt={`picture of a ${name} keyboard`}>
+    <div onMouseEnter={on} onMouseLeave={off} className={styles.GridImage}>
+      <Image
+        publicId={publicId}
+        alt={`picture of a ${name} keyboard`}
+        style={{
+          opacity: isHover ? 0.5 : 1,
+          transition: "opacity 200ms ease-in-out",
+        }}
+      >
         <Transformation width={isMobile ? "400" : "600"} crop="scale" />
       </Image>
 
       <span
         className={styles.GridImageName}
-        style={isHover ? { backgroundColor: color } : {}}
+        style={{
+          opacity: isHover ? 1 : 0,
+          transition: "opacity 200ms ease-in-out",
+        }}
       >
-        <p>{name}</p>
+        {name}
       </span>
     </div>
   );
 }
 
-export function GridGallery({ images, color }) {
+export function GridGallery({ images }) {
   return (
     <div className={styles.GridGallery}>
       {images.map((keyboard) => (
@@ -44,7 +45,6 @@ export function GridGallery({ images, color }) {
           name={keyboard.name}
           key={keyboard.id}
           publicId={keyboard.thumbnail_public_id}
-          color={color}
         />
       ))}
     </div>

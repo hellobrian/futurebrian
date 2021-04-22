@@ -9,23 +9,25 @@
 
 .GridImage {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .GridImageName {
+  /* centering text over image */
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   display: inline-flex;
   align-items: center;
-  top: 12px;
-  right: 12px;
   border-radius: 8px;
-  background: var(--black);
   padding: 0 16px;
-  transition: background-color 200ms ease-in-out;
-}
-
-.GridImageName p {
   font-family: var(--bebas);
-  font-size: 36px;
+  font-size: 52px;
+  color: var(--yellow);
 }
 
 @media screen and (max-width: 1815px) {
@@ -40,11 +42,6 @@
   }
 
   .GridImageName {
-    top: 8px;
-    right: 8px;
-  }
-
-  .GridImageName p {
-    font-size: 24px;
+    font-size: 32px;
   }
 }

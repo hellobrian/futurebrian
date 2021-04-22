@@ -30,7 +30,7 @@ export default function Keycaps({ data }) {
       <div className={styles.PageTitle}>
         <h2>Keycaps</h2>
       </div>
-      <GridGallery images={data.keycaps} color={"var(--red)"} />
+      <GridGallery images={data.keycaps} />
     </PageLayout>
   );
 }
