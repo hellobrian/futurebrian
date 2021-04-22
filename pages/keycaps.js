@@ -28,7 +28,7 @@ export default function Keycaps({ data }) {
   return (
     <PageLayout className={styles.Keyboards}>
       <div className={styles.PageTitle}>
-        <h2>Keyboards</h2>
+        <h2>Keycaps</h2>
       </div>
       <GridGallery images={data.keycaps} />
     </PageLayout>
