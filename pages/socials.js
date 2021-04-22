@@ -1,10 +1,9 @@
-import { Nav } from "@/components/Nav/Nav";
+import { PageLayout } from "@/components/PageLayout/PageLayout";
 
 export default function Socials() {
   return (
-    <div>
-      <Nav />
+    <PageLayout>
       <h2>Socials</h2>
-    </div>
+    </PageLayout>
   );
 }

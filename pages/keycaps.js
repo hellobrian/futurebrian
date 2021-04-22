@@ -1,10 +1,9 @@
-import { Nav } from "@/components/Nav/Nav";
+import { PageLayout } from "@/components/PageLayout/PageLayout";
 
 export default function Keycaps() {
   return (
-    <div>
-      <Nav />
+    <PageLayout>
       <h2>Keycaps</h2>
-    </div>
+    </PageLayout>
   );
 }

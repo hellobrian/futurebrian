@@ -1,0 +1,22 @@
+.PageLayout {
+  display: grid;
+  grid-template-areas:
+    "nav"
+    "main"
+    "footer";
+  grid-template-rows: 64px 1fr 64px;
+  height: 100vh;
+  gap: 16px;
+}
+
+.PageLayout > [data-name="Nav"] {
+  grid-area: nav;
+}
+
+.PageLayout > [data-name="Main"] {
+  grid-area: main;
+}
+
+.PageLayout > [data-name="Footer"] {
+  grid-area: footer;
+}

@@ -1,0 +1,43 @@
+.Keyboards .Title {
+  display: flex;
+  height: 25vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.Keyboards .Title > h2 {
+  font-size: 64px;
+  text-align: center;
+}
+
+.Keyboards .Grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  justify-items: center;
+}
+
+.Keyboards .Grid > .GridItem {
+  position: relative;
+}
+
+.GridItem img {
+  opacity: 0.9;
+}
+
+.KeyboardName {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 8px;
+
+  background: var(--black);
+  padding: 0 16px;
+}
+
+.KeyboardName p {
+  font-family: var(--bebas);
+  font-size: 36px;
+}

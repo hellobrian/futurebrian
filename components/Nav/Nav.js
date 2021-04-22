@@ -26,7 +26,7 @@ function NavLink({ href, children, color }) {
 
 export function Nav() {
   return (
-    <header className={styles.Nav}>
+    <header className={styles.Nav} data-name="Nav">
       <Link href="/">
         <a>
           <h1 className="fancy-link">futurebrian</h1>

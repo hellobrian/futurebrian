@@ -24,6 +24,7 @@
   --red: #ca106d;
   --purple: rgb(148, 41, 236);
   --blue: #3e3edd;
+  --faint: rgba(255, 255, 255, 0.1);
 
   /* gradients */
   --gradient: linear-gradient(

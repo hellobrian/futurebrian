@@ -1,10 +1,9 @@
-import { Nav } from "@/components/Nav/Nav";
+import { PageLayout } from "@/components/PageLayout/PageLayout";
 
 export default function Uses() {
   return (
-    <div>
-      <Nav />
+    <PageLayout>
       <h2>Uses</h2>
-    </div>
+    </PageLayout>
   );
 }
