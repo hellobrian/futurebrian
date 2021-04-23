@@ -15,6 +15,7 @@
 
 .PageLayout > [data-name="Main"] {
   grid-area: main;
+  padding-bottom: 64px;
 }
 
 .PageLayout > [data-name="Footer"] {

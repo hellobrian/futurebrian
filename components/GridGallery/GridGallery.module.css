@@ -36,9 +36,15 @@
   }
 }
 
+@media screen and (max-width: 1240px) {
+  .GridGallery {
+    max-width: 600px;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .GridGallery {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .GridImageName {

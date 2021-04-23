@@ -2,11 +2,11 @@ import Head from "next/head";
 import { Nav } from "@/components/Nav/Nav";
 import { Footer } from "@/components/Footer/Footer";
 
-import styles from "@/styles/Home.module.css";
+import styles from "./PageLayout.module.css";
 
 interface PageLayoutProps {
   className?: string;
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export function PageLayout(props: PageLayoutProps): JSX.Element {
