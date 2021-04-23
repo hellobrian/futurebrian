@@ -5,6 +5,18 @@
   justify-items: center;
   max-width: 1820px;
   margin: 0 auto;
+
+  @media screen and (max-width: 1815px) {
+    max-width: 1213px;
+  }
+
+  @media screen and (max-width: 1240px) {
+    max-width: 600px;
+  }
+
+  @media screen and (max-width: 750px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .GridImage {
@@ -29,22 +41,4 @@
   font-size: 52px;
   color: var(--white);
   width: fit-content;
-}
-
-@media screen and (max-width: 1815px) {
-  .GridGallery {
-    max-width: 1213px;
-  }
-}
-
-@media screen and (max-width: 1240px) {
-  .GridGallery {
-    max-width: 600px;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .GridGallery {
-    grid-template-columns: 1fr;
-  }
 }

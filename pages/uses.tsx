@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 
 import { PageLayout } from "@/components/PageLayout/PageLayout";
 
-import styles from "@/styles/Uses.module.css";
+import styles from "@/styles/Uses.module.scss";
 
 const ENDPOINT = process.env.PROD_GRAPHQL_ENDPOINT;
 

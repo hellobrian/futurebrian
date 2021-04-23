@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Nav } from "@/components/Nav/Nav";
 import { Footer } from "@/components/Footer/Footer";
 
-import styles from "./PageLayout.module.css";
+import styles from "./PageLayout.module.scss";
 
 interface PageLayoutProps {
   className?: string;

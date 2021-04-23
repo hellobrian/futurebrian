@@ -1,7 +1,7 @@
 import { PageLayout } from "@/components/PageLayout/PageLayout";
 import { VideoThumbnail } from "@/components/VideoThumbnail/VideoThumbnail";
 
-import styles from "@/styles/Socials.module.css";
+import styles from "@/styles/Socials.module.scss";
 
 export default function Socials(): JSX.Element {
   return (

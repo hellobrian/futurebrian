@@ -126,18 +126,17 @@ button {
   height: 25vh;
   align-items: center;
   justify-content: center;
-}
 
-.page-title > h2 {
-  font-size: 64px;
-  text-align: center;
-}
-
-@media screen and (max-width: 750px) {
-  .page-title {
+  @media screen and (max-width: 750px) {
     height: 20vh;
   }
-  .page-title > h2 {
-    font-size: 32px;
+
+  & > h2 {
+    font-size: 64px;
+    text-align: center;
+
+    @media screen and (max-width: 750px) {
+      font-size: 32px;
+    }
   }
 }

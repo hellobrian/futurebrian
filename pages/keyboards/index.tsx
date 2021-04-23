@@ -1,10 +1,10 @@
 import { request, gql } from "graphql-request";
-import { GetStaticProps } from 'next'
+import { GetStaticProps } from "next";
 
 import { PageLayout } from "@/components/PageLayout/PageLayout";
 import { GridGallery } from "@/components/GridGallery/GridGallery";
-import styles from "@/styles/Keyboards.module.css";
-import { Keyboard, GridGalleryVariant } from '@/utils/types'
+import styles from "@/styles/Keyboards.module.scss";
+import { Keyboard, GridGalleryVariant } from "@/utils/types";
 
 const ENDPOINT = process.env.PROD_GRAPHQL_ENDPOINT;
 
@@ -25,18 +25,18 @@ export const getStaticProps: GetStaticProps = async () => {
     props: { keyboards },
     revalidate: 1,
   };
-}
+};
 
 interface KeyboardsProps {
-  keyboards: [Keyboard]
+  keyboards: [Keyboard];
 }
 
 export default function Keyboards(props: KeyboardsProps): JSX.Element {
-  const { keyboards } = props
+  const { keyboards } = props;
 
   return (
     <PageLayout className={styles.Keyboards}>
-      <div className={'page-title'}>
+      <div className={"page-title"}>
         <h2>Keyboards</h2>
       </div>
       <GridGallery images={keyboards} variant={GridGalleryVariant.Keyboards} />

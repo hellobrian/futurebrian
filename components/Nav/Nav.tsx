@@ -2,18 +2,18 @@ import { cloneElement } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import styles from "./Nav.module.css";
+import styles from "./Nav.module.scss";
 
 enum LinkColor {
   Red = "var(--red)",
   Purple = "var(--purple)",
-  Blue = "var(--blue)"
+  Blue = "var(--blue)",
 }
 
 interface NavLinkProps {
-  href: string,
-  children: JSX.Element,
-  color: LinkColor
+  href: string;
+  children: JSX.Element;
+  color: LinkColor;
 }
 
 const LINKS = [
@@ -23,9 +23,8 @@ const LINKS = [
   { href: "/socials", text: "Socials", color: LinkColor.Blue },
 ];
 
-
 function NavLink(props: NavLinkProps): JSX.Element {
-  const { href, children, color } = props
+  const { href, children, color } = props;
   const router = useRouter();
 
   const style =

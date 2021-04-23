@@ -1,7 +1,7 @@
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import "../styles/globals.css";
+import "@/styles/globals.scss";
 
 const queryClient = new QueryClient();
 

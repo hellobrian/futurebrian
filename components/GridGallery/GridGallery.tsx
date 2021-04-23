@@ -3,9 +3,9 @@ import { Transformation, Image } from "cloudinary-react";
 import { useMedia } from "use-media";
 import Link from "next/link";
 
-import { GridGalleryVariant, Keyboard } from '@/utils/types'
+import { GridGalleryVariant, Keyboard } from "@/utils/types";
 
-import styles from "./GridGallery.module.css";
+import styles from "./GridGallery.module.scss";
 
 const transition = "opacity 200ms ease-in-out";
 
@@ -13,11 +13,11 @@ interface GridImageProps {
   name: string;
   publicId: string;
   id: string;
-  variant: GridGalleryVariant
+  variant: GridGalleryVariant;
 }
 
 function GridImage(props: GridImageProps): JSX.Element {
-  const  { name, publicId, id, variant } = props;
+  const { name, publicId, id, variant } = props;
 
   const isMobile = useMedia({ maxWidth: 750 });
   const [isHover, setHover] = useState(false);
@@ -68,8 +68,8 @@ function GridImage(props: GridImageProps): JSX.Element {
 }
 
 interface GridGalleryProps {
-  variant: GridGalleryVariant,
-  images: [Keyboard]
+  variant: GridGalleryVariant;
+  images: [Keyboard];
 }
 
 export function GridGallery(props: GridGalleryProps): JSX.Element {

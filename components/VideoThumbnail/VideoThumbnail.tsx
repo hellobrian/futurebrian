@@ -1,5 +1,5 @@
 import { IconYoutube } from "@/components/Icons/Icons";
-import styles from "./VideoThumbnail.module.css";
+import styles from "./VideoThumbnail.module.scss";
 
 export function VideoThumbnail(props): JSX.Element {
   const { text = "video thumbnail", icon = "" } = props;
