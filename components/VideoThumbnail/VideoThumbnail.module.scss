@@ -21,6 +21,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+
+  & > .Title {
+    display: block;
+    font-family: var(--roboto);
+    font-size: 14px;
+  }
 }
 
 .Icon {
