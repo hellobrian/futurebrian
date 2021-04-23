@@ -10,10 +10,10 @@ export default function Socials(): JSX.Element {
         <h2>Socials</h2>
       </div>
       <div className={styles.VideoThumbnailList}>
-        <VideoThumbnail />
-        <VideoThumbnail />
-        <VideoThumbnail />
-        <VideoThumbnail />
+        <VideoThumbnail icon="youtube" />
+        <VideoThumbnail icon="youtube" />
+        <VideoThumbnail icon="youtube" />
+        <VideoThumbnail icon="youtube" />
       </div>
     </PageLayout>
   );

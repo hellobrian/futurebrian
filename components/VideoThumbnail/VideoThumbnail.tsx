@@ -1,7 +1,8 @@
+import { IconYoutube } from "@/components/Icons/Icons";
 import styles from "./VideoThumbnail.module.css";
 
 export function VideoThumbnail(props): JSX.Element {
-  const { text = "video thumbnail" } = props;
+  const { text = "video thumbnail", icon = "" } = props;
   return (
     <a
       href="https://www.youtube.com/watch?v=BUlNAQkeew4"
@@ -21,6 +22,11 @@ export function VideoThumbnail(props): JSX.Element {
         />
       </video>
       <span className={styles.Text}>{text}</span>
+      {icon === "youtube" && (
+        <span className={styles.Icon}>
+          Watch on YouTube <IconYoutube />
+        </span>
+      )}
     </a>
   );
 }
