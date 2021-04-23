@@ -28,6 +28,7 @@
   font-family: var(--bebas);
   font-size: 52px;
   color: var(--white);
+  width: fit-content;
 }
 
 @media screen and (max-width: 1815px) {
@@ -45,9 +46,5 @@
 @media screen and (max-width: 750px) {
   .GridGallery {
     grid-template-columns: 1fr;
-  }
-
-  .GridImageName {
-    font-size: 32px;
   }
 }
