@@ -1,0 +1,44 @@
+.GridGallery {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  justify-items: center;
+  max-width: 1820px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1815px) {
+    max-width: 1213px;
+  }
+
+  @media screen and (max-width: 1240px) {
+    max-width: 600px;
+  }
+
+  @media screen and (max-width: 750px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.GridImage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.GridImageName {
+  /* centering text over image */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-family: var(--bebas);
+  font-size: 52px;
+  color: var(--white);
+  width: fit-content;
+}

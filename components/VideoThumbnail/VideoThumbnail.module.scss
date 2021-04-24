@@ -1,0 +1,50 @@
+.VideoThumbnail {
+  position: relative;
+  display: block;
+  max-width: 600px;
+}
+
+.Video {
+  width: 100%;
+  transition: opacity 200ms ease-in-out;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.Text {
+  font-size: 52px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 80%;
+
+  & > .Headline {
+    font-family: var(--bebas);
+    font-weight: 400;
+  }
+
+  & > .Title {
+    display: block;
+    font-family: var(--roboto);
+    font-size: 14px;
+  }
+}
+
+.Icon {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  top: 16px;
+  right: 16px;
+  font-size: 12px;
+
+  & > svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+  }
+}

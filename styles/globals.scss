@@ -1,0 +1,142 @@
+:root {
+  /* fonts */
+  --bebas: "Bebas Neue", cursive;
+  --roboto: "Roboto", sans-serif;
+
+  /* layers */
+  --layer--navbar: 2;
+  --layer--heading: 1;
+
+  /* sizes */
+  --navbarHeight: 58px;
+  --sidebarWidth: 320px;
+
+  /* shadows */
+  --tw-ring-shadow: 0 0 transparent;
+  --tw-ring-offset-shadow: 0 0 transparent;
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+
+  /* colors */
+  --black: black;
+  --white: white;
+  --red: #ca106d;
+  --purple: rgb(148, 41, 236);
+  --blue: #3e3edd;
+  --faint: rgba(255, 255, 255, 0.1);
+  --yellow: rgb(255, 204, 37);
+
+  /* gradients */
+  --gradient: linear-gradient(
+      70deg,
+      var(--red) 35%,
+      var(--purple) 70%,
+      var(--blue)
+    )
+    1;
+}
+
+html {
+  --primaryBackgroundColor: white;
+  --primaryTextColor: black;
+}
+
+html.dark {
+  --primaryBackgroundColor: black;
+  --primaryTextColor: white;
+
+  background: var(--primaryBackgroundColor);
+  color: var(--primaryTextColor);
+}
+
+body {
+  overflow-y: scroll;
+  font-family: var(--roboto);
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--bebas);
+  /* line-height: 1.75; */
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: var(--roboto);
+  line-height: 1.4;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  appearance: none;
+  border: none;
+  background: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* font-family */
+.ff--bebas {
+  font-family: var(--bebas);
+}
+
+.ff--roboto {
+  font-family: var(--roboto);
+}
+
+/* font-weight */
+.fw--normal {
+  font-weight: 400;
+}
+
+.fw--bold {
+  font-weight: 700;
+}
+
+/* styles */
+.fancy-link {
+  border-bottom: 4px solid var(--black);
+  border-image: var(--gradient);
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
+.page-title {
+  display: flex;
+  height: 25vh;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 750px) {
+    height: 20vh;
+  }
+
+  & > h2 {
+    font-size: 64px;
+    text-align: center;
+
+    @media screen and (max-width: 750px) {
+      font-size: 32px;
+    }
+  }
+}

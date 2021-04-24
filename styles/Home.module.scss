@@ -1,0 +1,20 @@
+.Section {
+  a {
+    text-decoration: underline;
+  }
+
+  .TextWrapper {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 32px;
+    max-width: 64ch;
+    padding: 0 16px;
+  }
+}
+.VideoThumbnailList {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  padding: 0 16px;
+  margin-bottom: 32px;
+}

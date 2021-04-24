@@ -1,0 +1,37 @@
+.Footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px 60px;
+  gap: 16px;
+}
+
+@media screen and (max-width: 750px) {
+  .Footer {
+    justify-content: center;
+    padding: 8px;
+  }
+}
+
+.Footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px;
+  margin: 16px 0;
+  border-radius: 100%;
+}
+
+.Footer a:hover {
+  background-color: var(--faint);
+  transition: background-color 200ms ease-in-out;
+}
+
+.Footer svg {
+  width: 24px;
+  height: 24px;
+}

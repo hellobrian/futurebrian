@@ -1,0 +1,93 @@
+.CardList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  max-width: 1208px;
+  justify-items: center;
+  margin: 0 auto;
+
+  @media screen and (max-width: 670px) {
+    grid-template-columns: 1fr;
+    padding: 0 8px;
+  }
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--white);
+  border-radius: 8px;
+  padding: 16px;
+  height: fit-content;
+  margin-bottom: 16px;
+
+  h3 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .Vendor {
+    margin-bottom: 32px;
+    padding: 8px 16px;
+    border-radius: 8px;
+
+    &[data-vendor="Amazon"] {
+      background: var(--yellow);
+      color: var(--black);
+    }
+
+    &[data-vendor="Kinetic Labs"] {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    &[data-vendor="Mino Keys"] {
+      background: #8fb2c0;
+      color: var(--black);
+    }
+
+    &[data-vendor="Prevail Key Co."] {
+      background: rgb(158, 14, 14);
+      color: var(--black);
+    }
+
+    &[data-vendor="Divinikey"] {
+      background: var(--purple);
+      color: var(--white);
+    }
+  }
+}
+
+.Info {
+  padding: 0 32px;
+
+  p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  img {
+    border: 16px solid var(--white);
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    border-radius: 8px;
+
+    @media screen and (max-width: 670px) {
+      max-width: 300px;
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+    padding: 0 16px;
+    margin-bottom: 16px;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+}
