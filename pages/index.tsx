@@ -66,7 +66,7 @@ export default function Home({ videos }): JSX.Element {
             Here's where you can find my latest videos on{" "}
             <a href="https://www.youtube.com/channel/UCQGq3OYhoZJrlRaemSCe6Zg">
               YouTube.
-            </a>
+            </a>{" "}
             I'm also on{" "}
             <a href="https://www.instagram.com/futurebrian_/">Instagram</a> and
             working my way into streaming more on{" "}
