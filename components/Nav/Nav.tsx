@@ -20,7 +20,7 @@ const LINKS = [
   { href: "/keyboards", text: "Keyboards", color: LinkColor.Red },
   { href: "/keycaps", text: "Keycaps", color: LinkColor.Red },
   { href: "/uses", text: "Uses", color: LinkColor.Purple },
-  { href: "/socials", text: "Socials", color: LinkColor.Blue },
+  // { href: "/socials", text: "Socials", color: LinkColor.Blue },
 ];
 
 function NavLink(props: NavLinkProps): JSX.Element {

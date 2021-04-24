@@ -14,13 +14,17 @@
 }
 
 .Text {
-  font-family: var(--bebas);
   font-size: 52px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+
+  & > .Headline {
+    font-family: var(--bebas);
+    font-weight: 400;
+  }
 
   & > .Title {
     display: block;
