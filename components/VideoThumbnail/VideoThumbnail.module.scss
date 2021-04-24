@@ -20,6 +20,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  width: 80%;
 
   & > .Headline {
     font-family: var(--bebas);

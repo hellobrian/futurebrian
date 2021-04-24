@@ -26,10 +26,7 @@ export function VideoThumbnail(props): JSX.Element {
       >
         <source src={src} type="video/mp4" />
       </video>
-      <span
-        className={styles.Text}
-        style={isLongHeadline ? { width: "80%" } : {}}
-      >
+      <span className={styles.Text}>
         <p
           className={styles.Headline}
           style={
