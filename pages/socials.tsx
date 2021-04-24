@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 export default function Socials({ videos }): JSX.Element {
   const latestVideo = videos.filter((_, i) => videos.length - 1 === i)[0];
-  console.log(latestVideo);
+
   return (
     <PageLayout>
       <div className={"page-title"}>

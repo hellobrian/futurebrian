@@ -8,7 +8,11 @@ export function VideoThumbnail(props): JSX.Element {
     href = "",
     title,
     src,
+    opacity = 1,
   } = props;
+
+  const isLongHeadline = headline.split(" ").length > 3;
+
   return (
     <a href={href} className={styles.VideoThumbnail}>
       <video
@@ -18,11 +22,24 @@ export function VideoThumbnail(props): JSX.Element {
         loop
         autoPlay
         className={styles.Video}
+        style={{ opacity }}
       >
         <source src={src} type="video/mp4" />
       </video>
-      <span className={styles.Text}>
-        <span className={styles.Headline}>{headline}</span>
+      <span
+        className={styles.Text}
+        style={isLongHeadline ? { width: "80%" } : {}}
+      >
+        <p
+          className={styles.Headline}
+          style={
+            isLongHeadline
+              ? { fontSize: 32, lineHeight: 1, fontFamily: "var(--bebas)" }
+              : {}
+          }
+        >
+          {headline}
+        </p>
         <span className={styles.Title}>{title}</span>
       </span>
       {icon === "youtube" && (

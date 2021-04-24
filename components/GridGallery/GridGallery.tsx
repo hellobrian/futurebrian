@@ -10,14 +10,14 @@ import styles from "./GridGallery.module.scss";
 const transition = "opacity 200ms ease-in-out";
 
 interface GridImageProps {
-  name: string;
+  name?: string;
   publicId: string;
   id: string;
   variant: GridGalleryVariant;
 }
 
 function GridImage(props: GridImageProps): JSX.Element {
-  const { name, publicId, id, variant } = props;
+  const { name = "", publicId, id, variant } = props;
 
   const isMobile = useMedia({ maxWidth: 750 });
   const [isHover, setHover] = useState(false);
@@ -31,7 +31,7 @@ function GridImage(props: GridImageProps): JSX.Element {
         <div onMouseEnter={on} onMouseLeave={off} className={styles.GridImage}>
           <Image
             publicId={publicId}
-            alt={`picture of a ${name} keyboard`}
+            alt={`picture of a ${name} keyboard`.trim()}
             style={
               !isMobile
                 ? {
@@ -46,21 +46,23 @@ function GridImage(props: GridImageProps): JSX.Element {
             <Transformation width={isMobile ? "400" : "600"} crop="scale" />
           </Image>
 
-          <span
-            className={styles.GridImageName}
-            style={
-              !isMobile
-                ? {
-                    opacity: isHover ? 1 : 0,
-                    transition,
-                  }
-                : {
-                    opacity: 1,
-                  }
-            }
-          >
-            {name}
-          </span>
+          {name && (
+            <span
+              className={styles.GridImageName}
+              style={
+                !isMobile
+                  ? {
+                      opacity: isHover ? 1 : 0,
+                      transition,
+                    }
+                  : {
+                      opacity: 1,
+                    }
+              }
+            >
+              {name}
+            </span>
+          )}
         </div>
       </a>
     </Link>
