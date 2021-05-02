@@ -46,7 +46,7 @@ export default function Home({ videos }): JSX.Element {
       >
         <div className={styles.TextWrapper}>
           <details>
-            <summary>About futurebrian.com</summary>
+            <summary className="bold">About futurebrian.com</summary>
             <p style={{ margin: "8px 0" }}>
               I'm Brian and I build and collect custom mechanical keyboards!
             </p>
@@ -81,6 +81,35 @@ export default function Home({ videos }): JSX.Element {
             href={latestVideo.direct_link}
             src={latestVideo.thumbnail_src}
           />
+        </div>
+        <div className={styles.TextWrapper}>
+          <p className="bold subpixel-antialiased">Streams</p>
+          <p style={{ margin: "8px 0", marginBottom: 16 }}>
+            Streaming on <a href="https://www.twitch.tv/futurebrian">Twitch</a>{" "}
+            and sometimes{" "}
+            <a href="https://www.instagram.com/futurebrian_/">Instagram</a>.
+            I'll update twitch and the list below with dates and times as I get
+            things scheduled.
+          </p>
+          <p className="bold subpixel-antialiased">
+            upcoming chores + chatting
+          </p>
+          <ul>
+            <li>Lubing Lavendar switches</li>
+            <li>Lubing and spring-swapping Gateron Black Ink V2 switches</li>
+            <li>Lubing Banana Splits</li>
+          </ul>
+          <p className="bold subpixel-antialiased">future build streams</p>
+          <ul>
+            <li>Stellar65 build with Gateron Black Ink V2 switches</li>
+            <li>Stellar12 build with random leftover switches</li>
+            <li>Rebuild Savage65 with Mauves</li>
+            <li>Rebuild KBD8X MKII with Durock/JWK Linears (65g pink stem)</li>
+            <li>ID80 Crystal Build (likey using Tactiles)</li>
+            <li>Switch Couture Alice (likely using Linears)</li>
+            <li>Rebuild Maja with POM plate and Banana Splits</li>
+            <li>Rebuild Thermal (switches TBA)</li>
+          </ul>
         </div>
         <div className={styles.TextWrapper}>
           <p>

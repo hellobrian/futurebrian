@@ -9,8 +9,19 @@
     margin-bottom: 32px;
     max-width: 64ch;
     padding: 0 16px;
+
+    & ul {
+      width: 100%;
+      list-style-type: disc;
+      padding: 0 20px;
+      margin-bottom: 16px;
+      & > li {
+        margin-bottom: 8px;
+      }
+    }
   }
 }
+
 .VideoThumbnailList {
   display: grid;
   justify-items: center;

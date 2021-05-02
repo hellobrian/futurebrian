@@ -113,6 +113,20 @@ button {
 }
 
 /* styles */
+.bold {
+  font-weight: 700;
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.subpixel-antialiased {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
 .fancy-link {
   border-bottom: 4px solid var(--black);
   border-image: var(--gradient);
