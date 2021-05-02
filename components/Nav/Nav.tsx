@@ -27,12 +27,11 @@ function NavLink(props: NavLinkProps): JSX.Element {
   const { href, children, color } = props;
   const router = useRouter();
 
-  const style =
-    router.pathname === href
-      ? {
-          background: color,
-        }
-      : {};
+  const style = router.pathname.includes(href)
+    ? {
+        background: color,
+      }
+    : {};
 
   return <Link href={href}>{cloneElement(children, { style })}</Link>;
 }
