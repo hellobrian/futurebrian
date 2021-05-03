@@ -48,7 +48,7 @@ const gifs = [
   ...pokemon,
 ];
 
-export default function StartingSoon(): JSX.Element {
+export default function Brb(): JSX.Element {
   const [count, setCount] = useState(0);
   const maxCount = gifs.length - 1;
   const duration = 1000 * 5;
@@ -62,7 +62,7 @@ export default function StartingSoon(): JSX.Element {
       } else {
         setCount(count + 1);
       }
-      // setCount(Math.floor(Math.random() * maxCount));
+      //   setCount(Math.floor(Math.random() * maxCount));
     }, duration);
     return () => {
       clearInterval(interval);
@@ -72,7 +72,7 @@ export default function StartingSoon(): JSX.Element {
   return (
     <PageLayout variant={VariantEnum.Twitch}>
       <div className={"page-title"} style={{ marginTop: 32 }}>
-        <h2>starting soon!</h2>
+        <h2>brb</h2>
       </div>
       <section
         className={styles.Section}
