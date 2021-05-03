@@ -45,6 +45,13 @@ export default function Commands(): JSX.Element {
         }}
       >
         <div style={{ fontSize: 24 }}>
+          <p style={{ textAlign: "center", marginBottom: 32 }}>
+            You can use these commands in futurebrian's{" "}
+            <Link href="/twitch">
+              <a>twitch</a>
+            </Link>{" "}
+            chat.
+          </p>
           <ul>
             <ListItem command="!youtube">
               link to futurebrian's{" "}
