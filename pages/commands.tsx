@@ -60,7 +60,7 @@ export default function Commands(): JSX.Element {
               </Link>{" "}
               page
             </ListItem>
-            <ListItem command="!instagram" alias="!ig">
+            <ListItem command="!instagram">
               link to futurebrian's{" "}
               <Link href="/instagram">
                 <a>instagram</a>
