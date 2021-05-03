@@ -14,3 +14,8 @@ export enum GridGalleryVariant {
   Keyboards = 'keyboards',
   Keycaps =  'keycaps'
 }
+
+export enum VariantEnum {
+  Default = "default",
+  Twitch = "twitch",
+}
