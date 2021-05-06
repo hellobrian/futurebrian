@@ -88,7 +88,7 @@ export default function Home({ videos }): JSX.Element {
             className="bold subpixel-antialiased"
             style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
           >
-            <IconTwitch style={{ width: 16, height: 16 }}></IconTwitch>
+            <IconTwitch style={{ width: 16, height: 16 }} />
             <span>Twitch Streams</span>
           </p>
           <p style={{ margin: "8px 0", marginBottom: 16 }}>
@@ -96,29 +96,27 @@ export default function Home({ videos }): JSX.Element {
             <a href="https://www.twitch.tv/futurebrian">Twitch</a> every
             Thursday at 6PM CDT.
           </p>
-          <p className="bold subpixel-antialiased">scheduled build streams</p>
+          <p className="bold subpixel-antialiased">upcoming streams</p>
           <ul>
             <li>
-              <a href="/twitch">
-                Stellar65 build with Lavendar switches - Thursday, May 6th @ 6PM
-                CDT on Twitch
-              </a>
+              <a href="/twitch">Build: Stellar65 with Lavendar switches</a>
             </li>
             <li>
-              <a href="/twitch">
-                Rebuild Savage65 with Mauves Thursday, May 13th @ 6PM CDT on
-                Twitch
-              </a>
+              <a href="/twitch">Rebuild: Savage65 with Mauve switches</a>
             </li>
           </ul>
+
           <p className="bold subpixel-antialiased">future streams</p>
           <ul>
-            <li>Stellar12 build with Lavendar switches</li>
-            <li>Rebuild KBD8X MKII with Durock/JWK Linears (65g pink stem)</li>
-            <li>ID80 Crystal Build (likey using Tactiles)</li>
-            <li>Switch Couture Alice (likely using Linears)</li>
-            <li>Rebuild Maja with POM plate and Banana Splits</li>
-            <li>Rebuild Thermal (switches TBA)</li>
+            <li>Build: Stellar12 with Lavendar switches</li>
+            <li>Build: ID80 Crystal Build (likey using Tactiles)</li>
+            <li>Build: Switch Couture Alice (likely using Linears)</li>
+            <li>Rebuild: KBD8X MKII with Durock/JWK Linears (65g pink stem)</li>
+            <li>Rebuild: Maja with POM plate and Banana Splits</li>
+            <li>Rebuild: Thermal (switches TBA)</li>
+            <li>Coding: Walkthrough futurebrian.com</li>
+            <li>Coding: Add Cypress end-to-end testing to futurebrian.com</li>
+            <li>Coding: Add unit tests with Jest and Testing Library React</li>
           </ul>
         </div>
       </section>
