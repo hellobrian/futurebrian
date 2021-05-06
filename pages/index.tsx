@@ -3,6 +3,7 @@ import { GetStaticProps } from "next";
 
 import { PageLayout } from "@/components/PageLayout/PageLayout";
 import { VideoThumbnail } from "@/components/VideoThumbnail/VideoThumbnail";
+import { IconTwitch } from "@/components/Icons/Icons";
 
 import styles from "@/styles/Home.module.scss";
 
@@ -83,40 +84,42 @@ export default function Home({ videos }): JSX.Element {
           />
         </div>
         <div className={styles.TextWrapper}>
-          <p className="bold subpixel-antialiased">Streams</p>
+          <p
+            className="bold subpixel-antialiased"
+            style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+          >
+            <IconTwitch style={{ width: 16, height: 16 }}></IconTwitch>
+            <span>Twitch Streams</span>
+          </p>
           <p style={{ margin: "8px 0", marginBottom: 16 }}>
-            Streaming on <a href="https://www.twitch.tv/futurebrian">Twitch</a>{" "}
-            and sometimes{" "}
-            <a href="https://www.instagram.com/futurebrian_/">Instagram</a>.
-            I'll update twitch and the list below with dates and times as I get
-            things scheduled.
+            Tentatively streaming on{" "}
+            <a href="https://www.twitch.tv/futurebrian">Twitch</a> every
+            Thursday at 6PM CDT.
           </p>
-          <p className="bold subpixel-antialiased">
-            upcoming chores + chatting
-          </p>
+          <p className="bold subpixel-antialiased">scheduled build streams</p>
           <ul>
-            <li>Lubing Lavendar switches</li>
-            <li>Lubing and spring-swapping Gateron Black Ink V2 switches</li>
-            <li>Lubing Banana Splits</li>
+            <li>
+              <a href="/twitch">
+                Stellar65 build with Lavendar switches - Thursday, May 6th @ 6PM
+                CDT on Twitch
+              </a>
+            </li>
+            <li>
+              <a href="/twitch">
+                Rebuild Savage65 with Mauves Thursday, May 13th @ 6PM CDT on
+                Twitch
+              </a>
+            </li>
           </ul>
-          <p className="bold subpixel-antialiased">future build streams</p>
+          <p className="bold subpixel-antialiased">future streams</p>
           <ul>
-            <li>Stellar65 build with Gateron Black Ink V2 switches</li>
-            <li>Stellar12 build with random leftover switches</li>
-            <li>Rebuild Savage65 with Mauves</li>
+            <li>Stellar12 build with Lavendar switches</li>
             <li>Rebuild KBD8X MKII with Durock/JWK Linears (65g pink stem)</li>
             <li>ID80 Crystal Build (likey using Tactiles)</li>
             <li>Switch Couture Alice (likely using Linears)</li>
             <li>Rebuild Maja with POM plate and Banana Splits</li>
             <li>Rebuild Thermal (switches TBA)</li>
           </ul>
-        </div>
-        <div className={styles.TextWrapper}>
-          <p>
-            If you've been enjoying my content, thank you so much! I appreciate
-            you and it's been a blast connecting with you and everyone through
-            this hobby.
-          </p>
         </div>
       </section>
     </PageLayout>
