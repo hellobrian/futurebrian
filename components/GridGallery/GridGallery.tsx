@@ -3,7 +3,7 @@ import { Transformation, Image } from "cloudinary-react";
 import { useMedia } from "use-media";
 import Link from "next/link";
 
-import { GridGalleryVariant, Keyboard } from "@/utils/types";
+import { GridGalleryVariant, Keyboard, Keycap } from "@/utils/types";
 
 import styles from "./GridGallery.module.scss";
 
@@ -71,7 +71,7 @@ function GridImage(props: GridImageProps): JSX.Element {
 
 interface GridGalleryProps {
   variant: GridGalleryVariant;
-  images: [Keyboard];
+  images: Keyboard[] | Keycap[];
 }
 
 export function GridGallery(props: GridGalleryProps): JSX.Element {

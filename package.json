@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "eslint -c .eslintrc.js"
+    "lint": "eslint -c .eslintrc.js",
+    "keycaps": "zx public/keycaps.mjs"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -21,7 +22,8 @@
     "react-query": "^3.13.6",
     "sass": "^1.32.11",
     "swr": "^0.4.1",
-    "use-media": "^1.4.0"
+    "use-media": "^1.4.0",
+    "zx": "^1.2.2"
   },
   "devDependencies": {
     "@types/node": "^14.14.41",

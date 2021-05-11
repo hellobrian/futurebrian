@@ -3,7 +3,7 @@ import { request, gql } from "graphql-request";
 import { Transformation, Image } from "cloudinary-react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { useMedia } from "use-media";
-import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from "react-markdown";
 
 import { PageLayout } from "@/components/PageLayout/PageLayout";
 import { Loading } from "@/components/Loading/Loading";

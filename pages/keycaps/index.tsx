@@ -4,7 +4,7 @@ import { GetStaticProps } from "next";
 import { PageLayout } from "@/components/PageLayout/PageLayout";
 import { GridGallery } from "@/components/GridGallery/GridGallery";
 import styles from "@/styles/Keyboards.module.scss";
-import { GridGalleryVariant, Keycap } from "@/utils/types";
+import { GridGalleryVariant, Keycap, StatusEnum } from "@/utils/types";
 
 const ENDPOINT = process.env.PROD_GRAPHQL_ENDPOINT;
 
@@ -15,6 +15,7 @@ export const getStaticProps: GetStaticProps = async () => {
         name
         id
         thumbnail_public_id
+        status
       }
     }
   `;
@@ -33,12 +34,20 @@ interface KeycapsProps {
 
 export default function Keycaps(props: KeycapsProps): JSX.Element {
   const { keycaps } = props;
+  const using = keycaps.filter((keycap) => keycap.status === StatusEnum.Using);
+  const storage = keycaps.filter(
+    (keycap) => keycap.status === StatusEnum.Storage
+  );
+
   return (
     <PageLayout className={styles.Keycaps}>
       <div className={"page-title"}>
         <h2>Keycaps</h2>
       </div>
-      <GridGallery images={keycaps} variant={GridGalleryVariant.Keycaps} />
+      <GridGallery
+        images={[...storage, ...using]}
+        variant={GridGalleryVariant.Keycaps}
+      />
     </PageLayout>
   );
 }
