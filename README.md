@@ -1,3 +1,10 @@
-# futurebrian frontend
+# futurebrian
 
-see README.md in root directory or on [github](https://github.com/hellobrian/futurebrian#futurebrian)
+Built with: 
+- Next.js
+- SCSS modules
+- Strapi CMS
+
+Deployed with render.com
+
+Visit the live site: www.futurebrian.com
