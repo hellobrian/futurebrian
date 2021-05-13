@@ -71,10 +71,18 @@ export default function Brb(): JSX.Element {
 
   return (
     <PageLayout variant={VariantEnum.Twitch}>
-      <div className={"page-title"} style={{ marginTop: 32 }}>
+      <div
+        className={"page-title"}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
         <h2>brb</h2>
       </div>
-      <section
+      {/* <section
         className={styles.Section}
         style={{
           display: "flex",
@@ -83,14 +91,12 @@ export default function Brb(): JSX.Element {
         }}
       >
         <div>
-          <div>
-            <img
-              src={gifs[count]}
-              alt="well be right back eric andre GIF by The Eric Andre Show"
-            />
-          </div>
+          <img
+            src={gifs[count]}
+            alt="well be right back eric andre GIF by The Eric Andre Show"
+          />
         </div>
-      </section>
+      </section> */}
     </PageLayout>
   );
 }

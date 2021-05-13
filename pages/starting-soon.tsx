@@ -71,7 +71,15 @@ export default function StartingSoon(): JSX.Element {
 
   return (
     <PageLayout variant={VariantEnum.Twitch}>
-      <div className={"page-title"} style={{ marginTop: 32 }}>
+      <div
+        className={"page-title"}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
         <h2>starting soon!</h2>
       </div>
       <section
@@ -82,14 +90,12 @@ export default function StartingSoon(): JSX.Element {
           alignItems: "center",
         }}
       >
-        <div>
-          <div>
+        {/* <div>
             <img
               src={gifs[count]}
               alt="well be right back eric andre GIF by The Eric Andre Show"
             />
-          </div>
-        </div>
+          </div> */}
       </section>
     </PageLayout>
   );
