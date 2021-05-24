@@ -7,30 +7,33 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "eslint -c .eslintrc.js",
-    "keycaps": "zx public/keycaps.mjs"
+    "keycaps": "zx public/keycaps.mjs",
+    "check-updates": "npm-check-updates",
+    "make-updates": "ncu -u"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
+    "classnames": "^2.3.1",
     "cloudinary-react": "^1.7.0",
-    "graphql": "^15.4.0",
+    "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
-    "next": "10.0.5",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "next": "10.2.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-loading-skeleton": "^2.2.0",
-    "react-markdown": "^5.0.3",
-    "react-query": "^3.13.6",
-    "sass": "^1.32.11",
-    "swr": "^0.4.1",
+    "react-markdown": "^6.0.2",
+    "react-query": "^3.16.0",
+    "sass": "^1.34.0",
+    "swr": "^0.5.6",
     "use-media": "^1.4.0",
-    "zx": "^1.2.2"
+    "zx": "^1.11.0"
   },
   "devDependencies": {
-    "@types/node": "^14.14.41",
-    "@types/react": "^17.0.3",
-    "eslint": "^7.18.0",
-    "eslint-plugin-react": "^7.22.0",
+    "@types/node": "^15.6.0",
+    "@types/react": "^17.0.6",
+    "eslint": "^7.27.0",
+    "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "npm-check-updates": "^11.5.13",
     "prop-types": "^15.7.2",
     "typescript": "^4.2.4"
   }
