@@ -92,24 +92,10 @@ export default function Home({ videos }): JSX.Element {
             <span>Twitch Streams</span>
           </p>
           <p style={{ margin: "8px 0", marginBottom: 16 }}>
-            Tentatively streaming on{" "}
-            <a href="https://www.twitch.tv/futurebrian">Twitch</a> every
-            Thursday at 6PM CDT.
+            Streaming on <a href="https://www.twitch.tv/futurebrian">Twitch</a>.
+            No schedule. I post stories on my <a href="/instagram">Instagram</a>{" "}
+            before I go live.
           </p>
-          <p className="bold subpixel-antialiased">future streams</p>
-          <ul>
-            <li>Build: Stellar65 with Lavendar switches</li>
-            <li>Build: Stellar12 with Lavendar switches</li>
-            <li>Build: ID80 Crystal Build</li>
-            <li>Build: Switch Couture Alice</li>
-            <li>Rebuild: Savage65 with Mauve switches</li>
-            <li>Rebuild: KBD8X MKII with PC plate</li>
-            <li>Rebuild: Maja with POM plate and Banana Split switches</li>
-            <li>Rebuild: Thermal (switches TBA)</li>
-            <li>Coding: Walkthrough futurebrian.com</li>
-            <li>Coding: Add Cypress end-to-end testing to futurebrian.com</li>
-            <li>Coding: Add unit tests with Jest and Testing Library React</li>
-          </ul>
         </div>
       </section>
     </PageLayout>
